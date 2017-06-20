@@ -1,4 +1,4 @@
-package task01;
+package task_01;
 
 public final class HelloWorld {
     public static void main(String[] args) {
