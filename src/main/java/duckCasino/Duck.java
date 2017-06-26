@@ -1,4 +1,4 @@
 package duckCasino;
 
-public class Duck {
+public abstract class Duck {
 }
