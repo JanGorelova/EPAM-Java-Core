@@ -1,4 +1,4 @@
-package duckCasino.duckTypes;
+package duckCasino.ducks;
 
 import duckCasino.Duck;
 
