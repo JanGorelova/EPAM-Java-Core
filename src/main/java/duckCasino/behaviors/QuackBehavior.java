@@ -1,5 +1,5 @@
 package duckCasino.behaviors;
 
 public interface QuackBehavior {
-    public void Quack();
+    public void quack();
 }
