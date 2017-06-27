@@ -73,8 +73,11 @@ public final class Casino {
         double maximalDistance = 0;
         int bestDuckNumber = -1;
 
+        System.out.println("Competition results:");
         for (int i = 0; i < ducks.length; i++) {
             final double currentDuckDistance = ducks[i].performFly(COMPETITION_TIME);
+
+            System.out.println("Duck #" + (i + 1) + ": " + currentDuckDistance + " meters");
             if (currentDuckDistance > maximalDistance) {
                 maximalDistance = currentDuckDistance;
                 bestDuckNumber = i;
