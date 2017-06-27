@@ -1,4 +1,4 @@
-package duckCasino;
+package duckCasino.ducks;
 
 import duckCasino.behaviors.FlyBehavior;
 import duckCasino.behaviors.QuackBehavior;

@@ -1,6 +1,5 @@
 package duckCasino.ducks;
 
-import duckCasino.Duck;
 import duckCasino.behaviors.*;
 
 public final class AmazingDuck extends Duck {
@@ -9,5 +8,5 @@ public final class AmazingDuck extends Duck {
         super(new FlyingDuckBehaviour(), new QuackingBehavior());
 
         }
-    }
+}
 

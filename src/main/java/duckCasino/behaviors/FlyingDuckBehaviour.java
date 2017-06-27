@@ -1,8 +1,5 @@
 package duckCasino.behaviors;
 
-import duckCasino.Duck;
-import duckCasino.behaviors.FlyBehavior;
-
 public final class FlyingDuckBehaviour implements FlyBehavior {
     int maximalVelocity = 100;
 
