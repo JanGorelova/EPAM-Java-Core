@@ -70,15 +70,17 @@ public final class Casino {
     }
 
     private static int findWinner(final Duck[] ducks) {
-        double distance = 0;
+        double maximalDistance = 0;
+        int bestDuckNumber = -1;
 
-
-        for (final Duck duck : ducks) {
-            final double currentDuckDistance = duck.performFly(COMPETITION_TIME);
-            if (currentDuckDistance > distance)
-                distance = currentDuckDistance;
+        for (int i = 0; i < ducks.length; i++) {
+            final double currentDuckDistance = ducks[i].performFly(COMPETITION_TIME);
+            if (currentDuckDistance > maximalDistance) {
+                maximalDistance = currentDuckDistance;
+                bestDuckNumber = i;
+            }
         }
 
-        return
+        return bestDuckNumber + 1;
     }
 }
