@@ -1,4 +1,4 @@
-package duckCasino.behaviors;
+package duckCasino.behaviors.fly;
 
 public final class FlyingDuckBehaviour implements FlyBehavior {
     private static final int MAXIMAL_VELOCITY = 100;

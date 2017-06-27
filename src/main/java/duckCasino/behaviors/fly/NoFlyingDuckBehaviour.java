@@ -1,4 +1,4 @@
-package duckCasino.behaviors;
+package duckCasino.behaviors.fly;
 
 public final class NoFlyingDuckBehaviour implements FlyBehavior {
     @Override

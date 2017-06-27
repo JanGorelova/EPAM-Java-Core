@@ -1,4 +1,4 @@
-package duckCasino.behaviors;
+package duckCasino.behaviors.quack;
 
 public final class QuackingBehavior implements QuackBehavior{
     @Override

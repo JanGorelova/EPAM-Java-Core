@@ -1,7 +1,7 @@
 package duckCasino.ducks;
 
-import duckCasino.behaviors.FlyBehavior;
-import duckCasino.behaviors.QuackBehavior;
+import duckCasino.behaviors.fly.FlyBehavior;
+import duckCasino.behaviors.quack.QuackBehavior;
 
 public abstract class Duck {
     private final FlyBehavior flyBehavior;

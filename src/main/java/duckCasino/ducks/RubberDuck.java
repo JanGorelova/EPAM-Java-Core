@@ -1,7 +1,7 @@
 package duckCasino.ducks;
 
-import duckCasino.behaviors.NoFlyingDuckBehaviour;
-import duckCasino.behaviors.NoQuackingBehavior;
+import duckCasino.behaviors.fly.NoFlyingDuckBehaviour;
+import duckCasino.behaviors.quack.NoQuackingBehavior;
 
 public final class RubberDuck extends Duck {
 

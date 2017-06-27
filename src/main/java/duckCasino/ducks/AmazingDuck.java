@@ -1,6 +1,7 @@
 package duckCasino.ducks;
 
-import duckCasino.behaviors.*;
+import duckCasino.behaviors.fly.FlyingDuckBehaviour;
+import duckCasino.behaviors.quack.QuackingBehavior;
 
 public final class AmazingDuck extends Duck {
 
