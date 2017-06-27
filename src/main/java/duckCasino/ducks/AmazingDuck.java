@@ -7,9 +7,11 @@ import duckCasino.behaviors.QuackBehavior;
 
 public final class AmazingDuck extends Duck {
 
-    public AmazingDuck(FlyingDuckBehaviour flyingDuckBehaviour, QuackBehavior quackBehavior) {
-        super(flyingDuckBehaviour, quackBehavior);
+    public AmazingDuck() {
+        super(new FlyingDuckBehaviour(), new QuackBehavior() {
+            @Override
+            public void quack() {
+            }
+        });
     }
-
-
 }
