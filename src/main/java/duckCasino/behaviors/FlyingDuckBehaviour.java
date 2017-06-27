@@ -1,7 +1,7 @@
 package duckCasino.behaviors;
 
 public final class FlyingDuckBehaviour implements FlyBehavior {
-    int maximalVelocity = 100;
+    private static final int MAXIMAL_VELOCITY = 100;
 
     @Override
     public double fly(int time) {
@@ -13,6 +13,6 @@ public final class FlyingDuckBehaviour implements FlyBehavior {
     }
 
     private double getCurrentVelocity() {
-        return 10 + Math.random() * (maximalVelocity - 10);
+        return 10 + Math.random() * (MAXIMAL_VELOCITY - 10);
     }
 }
