@@ -12,7 +12,7 @@ public abstract class Duck {
         this.quackBehavior = quackBehavior;
     }
 
-    public final double performFly(int time) {
+    public final int performFly(int time) {
         return flyBehavior.fly(time);
     }
 

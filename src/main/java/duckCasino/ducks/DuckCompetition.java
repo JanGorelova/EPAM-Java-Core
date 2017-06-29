@@ -23,11 +23,20 @@ public final class DuckCompetition {
             return new RubberDuck();
     }
 
+    public final int findWinner() {
+        int distance = 0;
+        int winnerNumber = 0;
+        for (int i = 0; i< ducks.length; i++) {
+            final int currentDuckDistance = ducks[i].performFly(COMPETITION_TIME);
+            if ( currentDuckDistance > distance) {
+                distance = currentDuckDistance;
+                winnerNumber = i;
+            }
+        }
+        return winnerNumber;
+    }
+
+
 
 }
 
-
-
-
-
-}
