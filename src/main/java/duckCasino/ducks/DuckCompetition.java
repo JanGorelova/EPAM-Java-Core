@@ -7,16 +7,15 @@ import static duckCasino.Constants.DUCKS_COUNT;
 
 public final class DuckCompetition {
     final Duck[] ducks;
-    private final Random random;
 
     public DuckCompetition(final int duckNumber) {
         this.ducks = new Duck[duckNumber];
-        for (int i = 0; i < duckNumber; i++)
+        for (int i = 0; i < duckNumber ; i++)
             ducks[i]= getRandomDuck();
-        this.random =  new Random();
     }
 
     private final Duck getRandomDuck() {
+        Random random = new Random();
         if (random.nextBoolean())
             return new AmazingDuck();
         else
@@ -35,8 +34,6 @@ public final class DuckCompetition {
         }
         return winnerNumber;
     }
-
-
 
 }
 
