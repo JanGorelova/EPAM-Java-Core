@@ -1,19 +1,15 @@
 package duckCasino;
 
-
-import duckCasino.ducks.AmazingDuck;
-import duckCasino.ducks.Duck;
-import duckCasino.ducks.RubberDuck;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
+import static duckCasino.Constants.CASH_STARTUP;
+import static duckCasino.Constants.COMPETITION_TIME;
+import static duckCasino.Constants.DUCKS_COUNT;
+
 public final class Casino {
-    private static final int CASH_STARTUP = 500;
-    private static final int COMPETITION_TIME = 10;
-    private static final int DUCKS_COUNT = 5;
 
     private static final Random random = new Random();
 
@@ -22,10 +18,13 @@ public final class Casino {
         final NumberReader reader = new NumberReader();
         final Account playerAccount = new Account(CASH_STARTUP);
 
+
         System.out.println("Welcome to duck casino! There are " + DUCKS_COUNT + " ducks. Let's win some money!");
         while (playerAccount.getCash()!= 0) {
             System.out.println("You have $" + playerAccount.getCash() + ". Please choose duck (1 - " + DUCKS_COUNT + ") and bet (1 - $" + cash + "). Type \"quit\" if you want to stop the game");
-           reader.getCommand();
+
+            Command command = new Command();
+            reader.getCommand();
 
 
             final int bet = Integer.parseInt(parameters[1]);

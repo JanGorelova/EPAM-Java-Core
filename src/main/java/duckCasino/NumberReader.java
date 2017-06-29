@@ -7,26 +7,23 @@ import java.io.InputStreamReader;
 
 public final class NumberReader {
     private final BufferedReader reader;
-    private int bet;
-    private int duckNumber;
+
 
     public NumberReader() {
         this.reader = new BufferedReader(new InputStreamReader(System.in));
-        this.bet = 0;
-        this.duckNumber = 0;
     }
 
-    public final void getCommand() throws IOException {
+    public final Command getCommand() throws IOException {
         final String line = reader.readLine();
-        if (line.equalsIgnoreCase("QUIT"))
-            System.out.println("Bye-bye");
+        final String[] parameters = line.split(" ");
 
-        String[] paramerers = line.split(" ");
+        if (line.equalsIgnoreCase("quit"))
+            System.exit(0);
 
-        if (paramerers.length != 2)
-            System.out.println("");
-        this.bet = Integer.parseInt(paramerers[0]);
-        this.duckNumber = Integer.parseInt(paramerers[0]);
+        if (parameters.length != 2)
+            System.out.println("Please, print the right format!");
+
+        return new Command(Integer.parseInt(parameters[0]),Integer.parseInt(parameters[1]));
     }
 
 }
