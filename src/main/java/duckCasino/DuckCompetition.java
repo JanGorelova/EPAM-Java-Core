@@ -1,4 +1,8 @@
-package duckCasino.ducks;
+package duckCasino;
+
+import duckCasino.ducks.AmazingDuck;
+import duckCasino.ducks.Duck;
+import duckCasino.ducks.RubberDuck;
 
 import java.util.Random;
 
