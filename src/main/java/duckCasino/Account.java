@@ -24,4 +24,8 @@ public final class Account {
 
         cash -= amount;
     }
+
+    public final int getCash() {
+        return cash;
+    }
 }

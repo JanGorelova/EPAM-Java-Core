@@ -20,25 +20,13 @@ public final class Casino {
     public static void main(final String[] args) throws IOException {
         int cash = CASH_STARTUP;
         final NumberReader reader = new NumberReader();
+        final Account playerAccount = new Account(CASH_STARTUP);
 
         System.out.println("Welcome to duck casino! There are " + DUCKS_COUNT + " ducks. Let's win some money!");
-        while (cash != 0) {
-            System.out.println("You have $" + cash + ". Please choose duck (1 - " + DUCKS_COUNT + ") and bet (1 - $" + cash + "). Type \"quit\" if you want to stop the game");
+        while (playerAccount.getCash()!= 0) {
+            System.out.println("You have $" + playerAccount.getCash() + ". Please choose duck (1 - " + DUCKS_COUNT + ") and bet (1 - $" + cash + "). Type \"quit\" if you want to stop the game");
            reader.getCommand();
-            if (line.equalsIgnoreCase("quit"))
-                break;
 
-            final String[] parameters = line.split(" ");
-            if (parameters.length != 2) {
-                System.out.println("Please, use following format: duck bet");
-                continue;
-            }
-
-            final int duck = Integer.parseInt(parameters[0]);
-            if (duck < 1 || duck > DUCKS_COUNT) {
-                System.out.println("The Duck number is invalid, the number must be from 1 to " + DUCKS_COUNT);
-                continue;
-            }
 
             final int bet = Integer.parseInt(parameters[1]);
             if (bet < 1 || bet > cash) {
