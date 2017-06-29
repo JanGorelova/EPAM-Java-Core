@@ -2,8 +2,7 @@ package duckCasino.ducks;
 
 import java.util.Random;
 
-import static duckCasino.Constants.COMPETITION_TIME;
-import static duckCasino.Constants.DUCKS_COUNT;
+import static duckCasino.constants.Constants.COMPETITION_TIME;
 
 public final class DuckCompetition {
     final Duck[] ducks;

@@ -1,15 +1,15 @@
 package duckCasino;
 
+import duckCasino.console.Command;
+import duckCasino.console.NumberReader;
 import duckCasino.ducks.DuckCompetition;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Random;
 
 
-import static duckCasino.Constants.CASH_STARTUP;
-import static duckCasino.Constants.DUCKS_COUNT;
+import static duckCasino.constants.Constants.CASH_STARTUP;
+import static duckCasino.constants.Constants.DUCKS_COUNT;
 
 
 public final class Casino {

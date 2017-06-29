@@ -1,4 +1,4 @@
-package duckCasino;
+package duckCasino.console;
 
 
 public final class Command {

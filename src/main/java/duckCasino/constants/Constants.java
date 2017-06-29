@@ -1,4 +1,4 @@
-package duckCasino;
+package duckCasino.constants;
 
 
 public final class Constants {

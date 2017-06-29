@@ -1,4 +1,4 @@
-package duckCasino;
+package duckCasino.console;
 
 
 import java.io.BufferedReader;
@@ -16,6 +16,8 @@ public final class NumberReader {
     public final Command getCommand() throws IOException {
         final String line = reader.readLine();
         final String[] parameters = line.split(" ");
+        final int duckNumber = Integer.parseInt(parameters[0]);
+        final int bet = Integer.parseInt(parameters[1]);
 
         if (line.equalsIgnoreCase("quit"))
             System.exit(0);
@@ -23,7 +25,7 @@ public final class NumberReader {
         if (parameters.length != 2)
             System.out.println("Please, print the right format!");
 
-        return new Command(Integer.parseInt(parameters[0]),Integer.parseInt(parameters[1]));
+        return new Command(duckNumber, bet);
     }
 
 }
