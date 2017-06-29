@@ -13,9 +13,6 @@ import static duckCasino.constants.Constants.DUCKS_COUNT;
 
 
 public final class Casino {
-
-    private static final Random random = new Random();
-
     public static void main(final String[] args) throws IOException {
         final NumberReader reader         = new NumberReader();
         final Account playerAccount       = new Account(CASH_STARTUP);
@@ -30,7 +27,7 @@ public final class Casino {
 
             if (competition.findWinner() != currentCommand.getDucknumber())
                 System.out.println("You loose! Your cash: $ " + playerAccount.withdraw(currentCommand.getBet()));
-            else System.out.println("You won! Your cash: $ " + playerAccount.debit(currentCommand.getBet()*2));
+            else System.out.println("You won! Your cash: $ " + playerAccount.debit(currentCommand.getBet() * 2));
         }
         System.out.println("You loose, bye-bye");
     }

@@ -5,7 +5,8 @@ import java.util.Random;
 import static duckCasino.constants.Constants.COMPETITION_TIME;
 
 public final class DuckCompetition {
-    final Duck[] ducks;
+    private final Duck[] ducks;
+    private final Random random = new Random();
 
     public DuckCompetition(final int duckNumber) {
         this.ducks = new Duck[duckNumber];
@@ -14,7 +15,6 @@ public final class DuckCompetition {
     }
 
     private final Duck getRandomDuck() {
-        Random random = new Random();
         if (random.nextBoolean())
             return new AmazingDuck();
         else
