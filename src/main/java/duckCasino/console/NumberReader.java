@@ -14,10 +14,10 @@ public final class NumberReader {
     }
 
     public final Command getCommand() throws IOException {
-        final String line = reader.readLine();
+        final String line         = reader.readLine();
         final String[] parameters = line.split(" ");
-        final int duckNumber = Integer.parseInt(parameters[0]);
-        final int bet = Integer.parseInt(parameters[1]);
+        final int duckNumber      = Integer.parseInt(parameters[0]);
+        final int bet             = Integer.parseInt(parameters[1]);
 
         if (line.equalsIgnoreCase("quit"))
             System.exit(0);
