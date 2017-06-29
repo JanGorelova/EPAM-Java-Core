@@ -19,12 +19,12 @@ public final class Casino {
 
     public static void main(final String[] args) throws IOException {
         int cash = CASH_STARTUP;
-        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        final NumberReader reader = new NumberReader();
 
         System.out.println("Welcome to duck casino! There are " + DUCKS_COUNT + " ducks. Let's win some money!");
         while (cash != 0) {
             System.out.println("You have $" + cash + ". Please choose duck (1 - " + DUCKS_COUNT + ") and bet (1 - $" + cash + "). Type \"quit\" if you want to stop the game");
-            final String line = reader.readLine();
+           reader.getCommand();
             if (line.equalsIgnoreCase("quit"))
                 break;
 

@@ -18,7 +18,12 @@ public final class NumberReader {
 
     public final void getCommand() throws IOException {
         final String line = reader.readLine();
+        if (line.equalsIgnoreCase("QUIT"))
+            System.out.println();;
         String[] paramerers = line.split(" ");
+
+        if (paramerers.length != 2)
+            System.out.println();
         this.bet = Integer.parseInt(paramerers[0]);
         this.duckNumber = Integer.parseInt(paramerers[0]);
     }
