@@ -1,6 +1,6 @@
 package seeBattle.game;
 
 enum Turn {
-    Computer,
-    Human
+    Player1,
+    Player2
 }

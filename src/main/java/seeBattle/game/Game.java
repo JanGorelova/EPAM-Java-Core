@@ -2,19 +2,20 @@ package seeBattle.game;
 
 import seeBattle.model.Field;
 import seeBattle.players.Player;
-import seeBattle.model.Coordinates;
 
 public final class Game {
-    private final Player computerPlayer;
-    private final Field humanField;
-    private final Field computerField;
-    private final Player humanPlayer;
+    private final Player player1;
+    private final Player player2;
 
-    public Game(final Player humanPlayer, final Player computerPlayer, final int fieldLength, final int fieldWidth) {
-        this.humanPlayer = humanPlayer;
-        this.computerPlayer = computerPlayer;
-        this.humanField = new Field(fieldLength,fieldWidth).getFullField();
-        this.computerField = new Field(fieldLength,fieldWidth).getFullField();
+    private final Field field1;
+    private final Field field2;
+
+    public Game(final Player player1, final Player player2) {
+        this.player1 = player1;
+        this.player2 = player2;
+
+        this.field1 = player1.createField();
+        this.field2 = player2.createField();
     }
 
     private boolean gameIsOver() {
@@ -22,25 +23,15 @@ public final class Game {
         return false;
     }
 
-    public final Field gameTurnHuman(final Coordinates coordinates) {
-        // проверить координаты, что не выходят за пределы поля
-        return null;
-    }
-
-    public final Field gameTurnComputer(final Coordinates coordinates) {
-        // проверить координаты, что не выходят за пределы поля
-        return null;
-    }
-
     public final void play() {
-        Turn turn = Turn.Human;
+        Turn turn = Turn.Player1;
 
         while (!gameIsOver()) {
             System.out.println("Hello, put the coordinates please!");
 
 //            ourGame.gameTurnHuman(console.getCoordinates());
 //            results.gameCurrentResultHuman();
-//            ourGame.gameTurnComputer(computerPlayer.getCoordinates());
+//            ourGame.gameTurnComputer(player1.getCoordinates());
 //            results.gameCurrentResultComputer();
         }
 //        System.out.println("The game is over! The winner is" + results.getWinnerName());

@@ -1,6 +1,7 @@
 package seeBattle.players;
 
 import seeBattle.model.Coordinates;
+import seeBattle.model.Field;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -40,6 +41,11 @@ public final class Human implements Player, AutoCloseable {
         } catch (final IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public Field createField() {
+        return null;
     }
 
     private int getParameter(final String parameter, final String message) {
