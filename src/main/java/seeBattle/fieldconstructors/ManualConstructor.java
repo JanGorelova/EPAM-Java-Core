@@ -4,7 +4,7 @@ import seeBattle.model.Field;
 
 public final class ManualConstructor implements FieldConstructor {
     @Override
-    public Field construct() {
-        return null;
+    public final Field construct() {
+        throw new RuntimeException("May be once I will decide to write it!");
     }
 }

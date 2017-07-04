@@ -4,7 +4,8 @@ import seeBattle.model.Field;
 
 public final class RandomConstructor implements FieldConstructor {
     @Override
-    public Field construct() {
+    public final Field construct() {
+        //TODO: Implement
         return null;
     }
 }
