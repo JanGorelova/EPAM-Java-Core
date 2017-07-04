@@ -6,6 +6,7 @@ import seeBattle.model.Field;
 public final class SmartComputer implements Player {
     @Override
     public final Coordinates getCoordinates() {
+        // TODO: Do after
         throw new RuntimeException("No No!");
     }
 

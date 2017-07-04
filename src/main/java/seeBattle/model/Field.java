@@ -12,12 +12,13 @@ public final class Field {
     }
 
     public final Field getFullField() {
+        // TODO: implement
         return null;
     }
 
     @Override
     public String toString() {
-        // shows the field view
+        // TODO: Override toString
         return null;
     }
 }

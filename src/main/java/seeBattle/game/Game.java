@@ -19,7 +19,7 @@ public final class Game {
     }
 
     private boolean gameIsOver() {
-        // игра закончена если все корабли погибли на поле
+        //TODO: Implement
         return false;
     }
 
@@ -28,7 +28,7 @@ public final class Game {
 
         while (!gameIsOver()) {
             System.out.println("Hello, put the coordinates please!");
-
+//TODO: work with play method
 //            ourGame.gameTurnHuman(console.getCoordinates());
 //            results.gameCurrentResultHuman();
 //            ourGame.gameTurnComputer(player1.getCoordinates());
