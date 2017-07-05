@@ -27,8 +27,22 @@ public final class Game {
         Turn turn = Turn.Player1;
 
         while (!gameIsOver()) {
-            System.out.println("Hello, put the coordinates please!");
+
 //TODO: work with play method
+            switch(turn) {
+                case Player1:
+                    System.out.println("Hello, player 1, put the coordinates please!");
+                    player1.getCoordinates();
+
+
+                    break;
+                case Player2:
+                    System.out.println("Hello, player 2, put the coordinates please!");
+                    player2.getCoordinates();
+
+                    break;
+            }
+
 //            ourGame.gameTurnHuman(console.getCoordinates());
 //            results.gameCurrentResultHuman();
 //            ourGame.gameTurnComputer(player1.getCoordinates());
