@@ -54,7 +54,23 @@ public final class Game {
             }
 
             final ShotResult result = currentField.shot(currentCoordinates);
-
+            switch (result) {
+                case AlreadyShoted:
+                    System.out.println("You have already shoot this cell!");
+                    // have an extra shot! or make a validation before every shot!
+                    break;
+                case Miss:
+                    System.out.println("You miss!");
+                    break;
+//                case Hit:
+//                    if (/* part of the ship was damaged*/)
+//                        System.out.println("You damaged the ship!");
+//                    continue; // wanna come back and this player has an extra shot!
+//
+//                    if (/*ship was sank */)
+//                        System.out.println("The ship was sank! Congratulations!");
+//                    break;
+            }
         }
 
         System.out.println("The game is over! The winner is:" + currentPlayer.getName());
