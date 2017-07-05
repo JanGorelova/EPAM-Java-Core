@@ -24,16 +24,15 @@ public final class Game {
         this.turn = Turn.Player1;
     }
 
-    private boolean gameIsOver() {
-        //TODO: Implement
-        return false;
+    private boolean hasShips() {
+        return field1.hasShips() && field2.hasShips();
     }
 
     public final void play() {
         Player currentPlayer = player1;
         Field currentField;
 
-        while (!gameIsOver()) {
+        while (hasShips()) {
             switch (turn) {
                 case Player1:
                     currentPlayer = player1;

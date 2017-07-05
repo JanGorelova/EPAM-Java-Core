@@ -87,5 +87,9 @@ public final class Field {
     public final void setCell(final Coordinates coordinates, final Cell cell) {
         cells[coordinates.x][coordinates.y] = cell;
     }
+
+    public final boolean hasShips() {
+        return true;
+    }
 }
 
