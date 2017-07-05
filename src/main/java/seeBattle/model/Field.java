@@ -27,11 +27,6 @@ public final class Field {
         return cells.length;
     }
 
-    public final Field getFullField() {
-        // TODO: implement
-        return null;
-    }
-
     @Override
     public String toString() {
         // TODO: Override toString
@@ -52,7 +47,6 @@ public final class Field {
 
             case Ship:
                 setCell(coordinates, Cell.DamagedShip);
-                //TODO: Check if ship has been sank
                 return ShotResult.Hit;
         }
 

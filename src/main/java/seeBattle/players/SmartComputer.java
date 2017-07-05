@@ -11,7 +11,6 @@ public final class SmartComputer extends Player {
 
     @Override
     public final Coordinates getCoordinates() {
-        // TODO: Do after
         throw new RuntimeException("No No!");
     }
 

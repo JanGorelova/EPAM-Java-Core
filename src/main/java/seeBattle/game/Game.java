@@ -72,6 +72,7 @@ public final class Game {
                     break;
                 case Hit:
                     System.out.println("You damaged the ship!");
+                    //TODO: Check if ship has been sank
                     break;
             }
         }
