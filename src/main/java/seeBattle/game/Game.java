@@ -31,7 +31,7 @@ public final class Game {
 
     public final void play() {
         Player currentPlayer = player1;
-        Field currentField   = field2;
+        Field currentField;
 
         while (!gameIsOver()) {
             switch (turn) {
