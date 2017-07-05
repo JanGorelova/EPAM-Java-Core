@@ -50,7 +50,7 @@ public final class Field {
                         builder.append("X ");
                         break;
                     case Ship:
-                        builder.append("O ");
+                        builder.append("~ ");
                         break;
                 }
 
@@ -89,6 +89,10 @@ public final class Field {
     }
 
     public final boolean hasShips() {
+        for (int row = 0; row < getLength(); row++)
+            for (int col = 0; col < getHeight(); col++)
+                if (cells[row][col] == Cell.Ship)
+                return false;
         return true;
     }
 }
