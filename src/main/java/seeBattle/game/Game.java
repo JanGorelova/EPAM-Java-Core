@@ -12,12 +12,16 @@ public final class Game {
     private final Field field1;
     private final Field field2;
 
+    private Turn turn;
+
     public Game(final Player player1, final Player player2) {
         this.player1 = player1;
         this.player2 = player2;
 
         this.field1 = player1.createField();
         this.field2 = player2.createField();
+
+        this.turn = Turn.Player1;
     }
 
     private boolean gameIsOver() {
@@ -26,8 +30,6 @@ public final class Game {
     }
 
     public final void play() {
-        Turn turn = Turn.Player1;
-
         Player currentPlayer = player1;
         Field currentField   = field2;
 
@@ -57,22 +59,21 @@ public final class Game {
             switch (result) {
                 case AlreadyShoted:
                     System.out.println("You have already shoot this cell!");
-                    // have an extra shot! or make a validation before every shot!
                     break;
                 case Miss:
                     System.out.println("You miss!");
+                    turn = nextPlayer();
                     break;
-//                case Hit:
-//                    if (/* part of the ship was damaged*/)
-//                        System.out.println("You damaged the ship!");
-//                    continue; // wanna come back and this player has an extra shot!
-//
-//                    if (/*ship was sank */)
-//                        System.out.println("The ship was sank! Congratulations!");
-//                    break;
+                case Hit:
+                    System.out.println("You damaged the ship!");
+                    break;
             }
         }
 
         System.out.println("The game is over! The winner is:" + currentPlayer.getName());
+    }
+
+    private Turn nextPlayer() {
+        return turn == Turn.Player1 ? Turn.Player2 : Turn.Player1;
     }
 }
