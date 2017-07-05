@@ -6,4 +6,5 @@ import seeBattle.model.Field;
 public interface Player {
     Coordinates getCoordinates();
     Field createField();
+    String getName();
 }

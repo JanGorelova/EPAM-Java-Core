@@ -15,4 +15,9 @@ public final class SmartComputer implements Player {
         //TODO: Implement
         return null;
     }
+
+    @Override
+    public final String getName() {
+        return "Smart computer #" + (int) (Math.random() * 100);
+    }
 }

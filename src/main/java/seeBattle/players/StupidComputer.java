@@ -15,4 +15,8 @@ public final class StupidComputer implements Player {
         //TODO: Implement
         return null;
     }
+
+    public final String getName() {
+        return "Stupid computer #" + (int) (Math.random() * 100);
+    }
 }

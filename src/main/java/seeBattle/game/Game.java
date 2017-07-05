@@ -28,20 +28,25 @@ public final class Game {
 
         while (!gameIsOver()) {
 
-//TODO: work with play method
+            final Player currentPlayer;
+            final Field currentField;
+
             switch(turn) {
                 case Player1:
-                    System.out.println("Hello, player 1, put the coordinates please!");
-                    player1.getCoordinates();
-
-
+                    currentPlayer = player1;
+                    currentField  = field2;
                     break;
                 case Player2:
-                    System.out.println("Hello, player 2, put the coordinates please!");
-                    player2.getCoordinates();
-
+                    currentPlayer = player1;
+                    currentField  = field2;
                     break;
+                default:
+                    throw new RuntimeException("Something went wrong. Can't determine current player");
             }
+
+            System.out.println("Hello, " + currentPlayer.getName() + ", put the coordinates please!");
+            currentPlayer.getCoordinates();
+
 
 //            ourGame.gameTurnHuman(console.getCoordinates());
 //            results.gameCurrentResultHuman();
