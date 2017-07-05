@@ -28,9 +28,36 @@ public final class Field {
     }
 
     @Override
-    public String toString() {
-        // TODO: Override toString
-        return null;
+    public final String toString() {
+        final StringBuilder builder = new StringBuilder("  ");
+
+        for (int column = 0; column < getLength(); column++)
+            builder.append(column).append(" ");
+        builder.append("\n");
+
+        for (int row = 0; row < getHeight(); row++) {
+            builder.append(row).append(" ");
+
+            for (int column = 0; column < getLength(); column++)
+                switch (cells[column][row]) {
+                    case Water:
+                        builder.append("~ ");
+                        break;
+                    case ShotedWater:
+                        builder.append(". ");
+                        break;
+                    case DamagedShip:
+                        builder.append("X ");
+                        break;
+                    case Ship:
+                        builder.append("O ");
+                        break;
+                }
+
+            builder.append("\n");
+        }
+
+        return builder.toString();
     }
 
     public final ShotResult shot(final Coordinates coordinates) {
