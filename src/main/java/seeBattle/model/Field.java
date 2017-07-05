@@ -19,11 +19,11 @@ public final class Field {
         return value >= min && value < max;
     }
 
-    private int getHeight() {
+    public final int getHeight() {
         return cells[0].length;
     }
 
-    private int getLength() {
+    public final int getLength() {
         return cells.length;
     }
 
@@ -80,7 +80,7 @@ public final class Field {
         throw new RuntimeException("Something went wrong");
     }
 
-    private Cell getCell(final Coordinates coordinates) {
+    public final Cell getCell(final Coordinates coordinates) {
         return cells[coordinates.x][coordinates.y];
     }
 

@@ -47,10 +47,9 @@ public final class Game {
                     throw new RuntimeException("Something went wrong. Can't determine current player");
             }
 
-            System.out.println("Target field:");
+            System.out.println(currentPlayer.getName() + ", it's your turn. Please put the coordinates! Target field:");
             System.out.print(currentField);
 
-            System.out.println("Hello, " + currentPlayer.getName() + ", put the coordinates please!");
             final Coordinates currentCoordinates = currentPlayer.getCoordinates();
             if (currentCoordinates == null) {
                 System.out.println("Wrong coordinates have been specified!");
