@@ -49,6 +49,10 @@ public final class Game {
 
             System.out.println("Hello, " + currentPlayer.getName() + ", put the coordinates please!");
             final Coordinates currentCoordinates = currentPlayer.getCoordinates();
+            if (currentCoordinates == null) {
+                System.out.println("Wrong coordinates have been specified!");
+                continue;
+            }
 
             if (!currentField.contains(currentCoordinates)) {
                 System.out.println("Coordinates are out of the field boundaries!");
