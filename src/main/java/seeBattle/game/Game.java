@@ -55,6 +55,8 @@ public final class Game {
                 continue;
             }
 
+            System.out.println("Shooting at: " + currentCoordinates);
+
             final ShotResult result = currentField.shot(currentCoordinates);
             switch (result) {
                 case AlreadyShoted:

@@ -4,7 +4,11 @@ import seeBattle.fieldconstructors.RandomConstructor;
 import seeBattle.model.Coordinates;
 import seeBattle.model.Field;
 
-public final class SmartComputer implements Player {
+public final class SmartComputer extends Player {
+    public SmartComputer() {
+        super("Smart computer #" + (int) (Math.random() * 100));
+    }
+
     @Override
     public final Coordinates getCoordinates() {
         // TODO: Do after
@@ -14,10 +18,5 @@ public final class SmartComputer implements Player {
     @Override
     public final Field createField() {
         return new RandomConstructor().construct();
-    }
-
-    @Override
-    public final String getName() {
-        return "Smart computer #" + (int) (Math.random() * 100);
     }
 }

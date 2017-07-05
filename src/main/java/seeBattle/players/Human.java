@@ -8,17 +8,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public final class Human implements Player, AutoCloseable {
+public final class Human extends Player implements AutoCloseable {
     private final InputStreamReader streamReader;
     private final BufferedReader reader;
-    private final String name;
 
     public Human() throws IOException {
+        super("Human");
         this.streamReader = new InputStreamReader(System.in);
         this.reader = new BufferedReader(streamReader);
-
-        System.out.println("Hello, put your name, please");
-        this.name = reader.readLine();
     }
 
     @Override
@@ -51,11 +48,6 @@ public final class Human implements Player, AutoCloseable {
     @Override
     public final Field createField() {
         return new RandomConstructor().construct();
-    }
-
-    @Override
-    public final String getName() {
-        return name;
     }
 
     private int getParameter(final String parameter, final String message) {

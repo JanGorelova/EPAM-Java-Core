@@ -5,6 +5,10 @@ public final class Field {
 
     public Field(final int length, final int height) {
         this.cells = new Cell[length][height];
+
+        for (int column = 0; column < length; column++)
+            for (int row = 0; row < height; row++)
+                cells[column][row] = Cell.Water;
     }
 
     public final boolean contains(final Coordinates coordinates) {

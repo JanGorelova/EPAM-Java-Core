@@ -1,22 +1,26 @@
 package seeBattle.players;
 
+import seeBattle.SeaBattle;
 import seeBattle.fieldconstructors.RandomConstructor;
 import seeBattle.model.Coordinates;
 import seeBattle.model.Field;
 
-public final class StupidComputer implements Player {
+import java.util.Random;
+
+public final class StupidComputer extends Player {
+    public StupidComputer() {
+        super("Smart computer #" + (int) (Math.random() * 100));
+    }
+
     @Override
     public final Coordinates getCoordinates() {
-        //TODO: Implement
-        return null;
+        final Random random = new Random();
+
+        return new Coordinates(random.nextInt(SeaBattle.FIELD_LENGTH), random.nextInt(SeaBattle.FIELD_HEIGHT));
     }
 
     @Override
     public final Field createField() {
         return new RandomConstructor().construct();
-    }
-
-    public final String getName() {
-        return "Stupid computer #" + (int) (Math.random() * 100);
     }
 }
