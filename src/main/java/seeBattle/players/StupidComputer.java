@@ -1,5 +1,6 @@
 package seeBattle.players;
 
+import seeBattle.fieldconstructors.RandomConstructor;
 import seeBattle.model.Coordinates;
 import seeBattle.model.Field;
 
@@ -11,9 +12,8 @@ public final class StupidComputer implements Player {
     }
 
     @Override
-    public Field createField() {
-        //TODO: Implement
-        return null;
+    public final Field createField() {
+        return new RandomConstructor().construct();
     }
 
     public final String getName() {

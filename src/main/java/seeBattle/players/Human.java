@@ -1,5 +1,6 @@
 package seeBattle.players;
 
+import seeBattle.fieldconstructors.RandomConstructor;
 import seeBattle.model.Coordinates;
 import seeBattle.model.Field;
 
@@ -48,9 +49,8 @@ public final class Human implements Player, AutoCloseable {
     }
 
     @Override
-    public Field createField() {
-        //TODO: Implement
-        return null;
+    public final Field createField() {
+        return new RandomConstructor().construct();
     }
 
     @Override
