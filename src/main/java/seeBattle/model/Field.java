@@ -84,7 +84,7 @@ public final class Field {
         return cells[coordinates.x][coordinates.y];
     }
 
-    private void setCell(final Coordinates coordinates, final Cell cell) {
+    public final void setCell(final Coordinates coordinates, final Cell cell) {
         cells[coordinates.x][coordinates.y] = cell;
     }
 }

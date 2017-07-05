@@ -1,12 +1,7 @@
 package seeBattle.fieldconstructors;
 
 import seeBattle.SeaBattle;
-import seeBattle.model.Cell;
-import seeBattle.model.Coordinates;
-import seeBattle.model.Direction;
-import seeBattle.model.Field;
-
-import java.util.Random;
+import seeBattle.model.*;
 
 public final class RandomConstructor implements FieldConstructor {
     @Override
@@ -15,33 +10,43 @@ public final class RandomConstructor implements FieldConstructor {
 
         for (int size = 4; size >= 1; size--)
             for (int count = 0; count < 4 - size + 1; count++) {
-                Coordinates coordinates = selectFreeCell(field);
+                Coordinates coordinates = Coordinates.random(SeaBattle.FIELD_LENGTH, SeaBattle.FIELD_HEIGHT);
                 Direction direction     = Direction.random();
 
-                while (!isShipPlaced(coordinates, direction, size)) {
-                    coordinates = selectFreeCell(field);
-                    direction = Direction.random();
+                while (!isShipPlaced(field, coordinates, direction, size)) {
+                    coordinates = Coordinates.random(SeaBattle.FIELD_LENGTH, SeaBattle.FIELD_HEIGHT);
+                    direction   = Direction.random();
                 }
 
-                placeShip(coordinates, direction, size);
+                placeShip(field, coordinates, direction, size);
             }
 
         return field;
     }
 
-    private void placeShip(final Coordinates coordinates, final Direction direction, final int size) {
-
+    private void placeShip(final Field field, final Coordinates coordinates, final Direction direction, final int size) {
+        for (int i = 0; i < size; i++)
+            field.setCell(new Coordinates(coordinates.x + i * direction.getDx(), coordinates.y + i * direction.getDy()), Cell.Ship);
     }
 
-    private boolean isShipPlaced(final Coordinates coordinates, final Direction direction, final int size) {
-        return false;
+    private boolean isShipPlaced(final Field field, final Coordinates coordinates, final Direction direction, final int size) {
+        for (int i = 0; i < size; i++)
+            if (!isCellAvailable(field, new Coordinates(coordinates.x + i * direction.getDx(), coordinates.y + i * direction.getDy())))
+                return false;
+
+        return true;
     }
 
-    private Coordinates selectFreeCell(final Field field) {
-        Coordinates coordinates = Coordinates.random(SeaBattle.FIELD_LENGTH, SeaBattle.FIELD_HEIGHT);
-        while (field.getCell(coordinates) != Cell.Water)
-            coordinates = Coordinates.random(SeaBattle.FIELD_LENGTH, SeaBattle.FIELD_HEIGHT);
+    private boolean isCellAvailable(final Field field, final Coordinates coordinates) {
+        if (!field.contains(coordinates))
+            return false;
 
-        return coordinates;
+        for (final Neighbours neigbour : Neighbours.values()) {
+            final Coordinates neighbourCoordinates = new Coordinates(coordinates.x + neigbour.getDx(), coordinates.y + neigbour.getDy());
+            if (field.contains(neighbourCoordinates) && (field.getCell(neighbourCoordinates) != Cell.Water))
+                return false;
+        }
+
+        return field.getCell(coordinates) == Cell.Water;
     }
 }
