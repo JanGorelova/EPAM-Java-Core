@@ -1,8 +1,6 @@
 package seeBattle.game;
 
-import seeBattle.model.Coordinates;
-import seeBattle.model.Field;
-import seeBattle.model.ShotResult;
+import seeBattle.model.*;
 import seeBattle.players.Player;
 
 public final class Game {
@@ -74,11 +72,30 @@ public final class Game {
                 case Hit:
                     System.out.println("You damaged the ship!");
                     //TODO: Check if ship has been sank
+                    //if (isSank())
                     break;
             }
         }
 
         System.out.println("The game is over! The winner is:" + currentPlayer.getName());
+    }
+
+    private void isSank(final Coordinates coordinates, final Field field) {
+       // // TODO: finish this
+        if (getNeighbour(coordinates, Direction.Up,field)!= Cell.Ship
+                || getNeighbour(coordinates, Direction.Down,field)!= Cell.Ship
+                || getNeighbour(coordinates, Direction.Left,field)!= Cell.Ship
+                || getNeighbour(coordinates, Direction.Right,field)!= Cell.Ship)
+            System.out.println("You killed the 1-board ship!");
+            //field.setCell();//
+
+
+
+
+    }
+
+    private Cell getNeighbour(final Coordinates coordinates, final Direction direction, final Field field) {
+        return field.getCell(new Coordinates(coordinates.x + direction.getDx(), coordinates.y + direction.getDy()));
     }
 
     private Turn nextPlayer() {
