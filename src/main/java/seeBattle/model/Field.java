@@ -1,10 +1,10 @@
 package seeBattle.model;
 
 public final class Field {
-    private final int[][] field;
+    private final Cell[][] cells;
 
     public Field(final int length, final int height) {
-        this.field = new int[length][height];
+        this.cells = new Cell[length][height];
     }
 
     public final boolean contains(final Coordinates coordinates) {
@@ -16,11 +16,11 @@ public final class Field {
     }
 
     private int getHeight() {
-        return field[0].length;
+        return cells[0].length;
     }
 
     private int getLength() {
-        return field.length;
+        return cells.length;
     }
 
     public final Field getFullField() {
@@ -32,6 +32,35 @@ public final class Field {
     public String toString() {
         // TODO: Override toString
         return null;
+    }
+
+    public final ShotResult shot(final Coordinates coordinates) {
+        switch (getCell(coordinates)) {
+            case Water:
+                setCell(coordinates, Cell.ShotedWater);
+                return ShotResult.Miss;
+
+            case ShotedWater:
+                return ShotResult.AlreadyShoted;
+
+            case DamagedShip:
+                return ShotResult.AlreadyShoted;
+
+            case Ship:
+                setCell(coordinates, Cell.DamagedShip);
+                //TODO: Check if ship has been sank
+                return ShotResult.Hit;
+        }
+
+        throw new RuntimeException("Something went wrong");
+    }
+
+    private Cell getCell(final Coordinates coordinates) {
+        return cells[coordinates.x][coordinates.y];
+    }
+
+    private void setCell(final Coordinates coordinates, final Cell cell) {
+        cells[coordinates.x][coordinates.y] = cell;
     }
 }
 

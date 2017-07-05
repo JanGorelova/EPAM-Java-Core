@@ -1,6 +1,8 @@
 package seeBattle.game;
 
+import seeBattle.model.Coordinates;
 import seeBattle.model.Field;
+import seeBattle.model.ShotResult;
 import seeBattle.players.Player;
 
 public final class Game {
@@ -26,33 +28,35 @@ public final class Game {
     public final void play() {
         Turn turn = Turn.Player1;
 
+        Player currentPlayer = player1;
+        Field currentField   = field2;
+
         while (!gameIsOver()) {
-
-            final Player currentPlayer;
-            final Field currentField;
-
-            switch(turn) {
+            switch (turn) {
                 case Player1:
                     currentPlayer = player1;
-                    currentField  = field2;
+                    currentField = field2;
                     break;
                 case Player2:
-                    currentPlayer = player1;
-                    currentField  = field2;
+                    currentPlayer = player2;
+                    currentField = field1;
                     break;
                 default:
                     throw new RuntimeException("Something went wrong. Can't determine current player");
             }
 
             System.out.println("Hello, " + currentPlayer.getName() + ", put the coordinates please!");
-            currentPlayer.getCoordinates();
+            final Coordinates currentCoordinates = currentPlayer.getCoordinates();
 
+            if (!currentField.contains(currentCoordinates)) {
+                System.out.println("Coordinates are out of the field boundaries!");
+                continue;
+            }
 
-//            ourGame.gameTurnHuman(console.getCoordinates());
-//            results.gameCurrentResultHuman();
-//            ourGame.gameTurnComputer(player1.getCoordinates());
-//            results.gameCurrentResultComputer();
+            final ShotResult result = currentField.shot(currentCoordinates);
+
         }
-//        System.out.println("The game is over! The winner is" + results.getWinnerName());
+
+        System.out.println("The game is over! The winner is:" + currentPlayer.getName());
     }
 }
