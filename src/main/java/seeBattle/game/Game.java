@@ -82,12 +82,12 @@ public final class Game {
 
     private void isSank(final Coordinates coordinates, final Field field) {
        // // TODO: finish this
-        if (getNeighbour(coordinates, Direction.Up,field)!= Cell.Ship
-                || getNeighbour(coordinates, Direction.Down,field)!= Cell.Ship
-                || getNeighbour(coordinates, Direction.Left,field)!= Cell.Ship
-                || getNeighbour(coordinates, Direction.Right,field)!= Cell.Ship)
-            System.out.println("You killed the 1-board ship!");
-            //field.setCell();//
+
+//        if (getNeighbour(coordinates, Direction.Up,field)!= Cell.Ship
+//                || getNeighbour(coordinates, Direction.Down,field)!= Cell.Ship
+//                || getNeighbour(coordinates, Direction.Left,field)!= Cell.Ship
+//                || getNeighbour(coordinates, Direction.Right,field)!= Cell.Ship) {
+//            if
 
 
 
