@@ -8,19 +8,24 @@ public final class Test {
 
     public static void main(String[] args) {
         System.out.println("Put the Word? please!");
+        Test main = new Test();
+        System.out.println(main.getOddLetterWord());
+    }
 
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
-            StringBuilder builder =  new StringBuilder();
+    public final String getOddLetterWord() {
+        final StringBuilder builder = new StringBuilder();
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             String word = reader.readLine();
-            char[] wordArr = word.toCharArray();
+            char[] wordArray = word.toCharArray();
 
-            for (int i = 0; i < wordArr.length; i++) {
-                if (i%2 == 0)
-                    builder.append(wordArr[i]);
+            for (int i = 0; i < wordArray.length; i++) {
+                if (i % 2 == 0)
+                    builder.append(wordArray[i]);
             }
-            System.out.println(builder.toString());
         } catch (IOException e) {
             e.getMessage();
         }
+        return builder.toString();
     }
 }

@@ -2,26 +2,23 @@ package task04;
 
 public final class Test01 {
     public static void main(String[] args) {
+        Test01 main = new Test01();
+
         String firstSentence = "АРГЕНТИНА МАНИТ НЕГРА";
         String secondSentence = "ПОТ КАК ПОТОП";
         String thirdSentence = "А РОЗА УПАЛА НА ЛАПУ АЗОРА";
 
-       firstSentence = firstSentence.replaceAll(" ","");
-       secondSentence = secondSentence.replaceAll(" ","");
-       thirdSentence = thirdSentence.replaceAll(" ","");
-
-        char[] firstArr = firstSentence.toCharArray();
-        char[] secondArr = secondSentence.toCharArray();
-        char[] thirdArr = thirdSentence.toCharArray();
-
-        System.out.println(isFlipFlop(firstArr));
-        System.out.println(isFlipFlop(secondArr));
-        System.out.println(isFlipFlop(thirdArr));
+        System.out.println(main.isFlipFlop(firstSentence));
+        System.out.println(main.isFlipFlop(secondSentence));
+        System.out.println(main.isFlipFlop(thirdSentence));
     }
 
-    public static boolean isFlipFlop(final char[] array) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] != array[array.length-1-i])
+    public final boolean isFlipFlop(final String sentence) {
+        String sentenceContinious = sentence.replaceAll(" ", "");
+        char[] sentenceArray = sentenceContinious.toCharArray();
+
+        for (int i = 0; i < sentenceArray.length; i++) {
+            if (sentenceArray[i] != sentenceArray[sentenceArray.length - 1 - i])
                 return false;
         }
         return true;

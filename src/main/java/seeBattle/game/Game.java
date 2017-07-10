@@ -88,10 +88,6 @@ public final class Game {
 //                || getNeighbour(coordinates, Direction.Left,field)!= Cell.Ship
 //                || getNeighbour(coordinates, Direction.Right,field)!= Cell.Ship) {
 //            if
-
-
-
-
     }
 
     private Cell getNeighbour(final Coordinates coordinates, final Direction direction, final Field field) {
