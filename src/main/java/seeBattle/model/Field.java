@@ -93,7 +93,7 @@ public final class Field {
             for (int col = 0; col < getHeight(); col++)
                 if (cells[row][col] == Cell.Ship) {
                     return true;
-            }
+                }
         return false;
     }
 }

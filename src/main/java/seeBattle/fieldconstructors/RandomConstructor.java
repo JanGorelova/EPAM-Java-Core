@@ -11,11 +11,11 @@ public final class RandomConstructor implements FieldConstructor {
         for (int size = 4; size >= 1; size--)
             for (int count = 0; count < 4 - size + 1; count++) {
                 Coordinates coordinates = Coordinates.random(SeaBattle.FIELD_LENGTH, SeaBattle.FIELD_HEIGHT);
-                Direction direction     = Direction.random();
+                Direction direction = Direction.random();
 
                 while (!isShipPlaced(field, coordinates, direction, size)) {
                     coordinates = Coordinates.random(SeaBattle.FIELD_LENGTH, SeaBattle.FIELD_HEIGHT);
-                    direction   = Direction.random();
+                    direction = Direction.random();
                 }
 
                 placeShip(field, coordinates, direction, size);
