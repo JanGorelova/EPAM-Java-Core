@@ -41,8 +41,8 @@ public final class RandomConstructor implements FieldConstructor {
         if (!field.contains(coordinates))
             return false;
 
-        for (final Neighbours neigbour : Neighbours.values()) {
-            final Coordinates neighbourCoordinates = new Coordinates(coordinates.x + neigbour.getDx(), coordinates.y + neigbour.getDy());
+        for (final Neighbour neigbour : Neighbour.values()) {
+            final Coordinates neighbourCoordinates = Coordinates.getNeighbour(coordinates, neigbour);
             if (field.contains(neighbourCoordinates) && (field.getCell(neighbourCoordinates) != Cell.Water))
                 return false;
         }

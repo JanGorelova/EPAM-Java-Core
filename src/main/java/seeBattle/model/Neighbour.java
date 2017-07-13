@@ -1,6 +1,6 @@
 package seeBattle.model;
 
-public enum Neighbours {
+public enum Neighbour implements Directional {
     Up(0, -1),
     Down(0, 1),
     Left(-1, 0),
@@ -13,15 +13,17 @@ public enum Neighbours {
     private final int dx;
     private final int dy;
 
-    Neighbours(final int dx, final int dy) {
+    Neighbour(final int dx, final int dy) {
         this.dx = dx;
         this.dy = dy;
     }
 
+    @Override
     public final int getDx() {
         return dx;
     }
 
+    @Override
     public final int getDy() {
         return dy;
     }

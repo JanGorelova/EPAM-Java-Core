@@ -16,7 +16,7 @@ public final class Console implements AutoCloseable {
     }
 
     public final Coordinates getCoordinates() {
-        try {
+        try{
             final String line = reader.readLine();
             final String[] parameters = line.split(" ");
 

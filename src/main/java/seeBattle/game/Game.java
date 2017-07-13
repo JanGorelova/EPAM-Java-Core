@@ -3,6 +3,11 @@ package seeBattle.game;
 import seeBattle.model.*;
 import seeBattle.players.Player;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public final class Game {
     private final Player player1;
     private final Player player2;
@@ -70,9 +75,10 @@ public final class Game {
                     turn = nextPlayer();
                     break;
                 case Hit:
-                    System.out.println("You damaged the ship!");
-                    //TODO: Check if ship has been sank
-                    //if (isSank())
+                    System.out.println("The ship has been damaged!");
+
+                    if (sankShipIfPossible(currentCoordinates, currentField))
+                        System.out.println("The ship has been sank!");
                     break;
             }
         }
@@ -80,18 +86,57 @@ public final class Game {
         System.out.println("The game is over! The winner is:" + currentPlayer.getName());
     }
 
-    private void isSank(final Coordinates coordinates, final Field field) {
-       // // TODO: finish this
+    private List<Coordinates> getShipCellCoordinates(final Coordinates coordinates, final Field field) {
+        final List<Coordinates> shipCells = new ArrayList<>();
+        shipCells.add(coordinates);
 
-//        if (getNeighbour(coordinates, Direction.Up,field)!= Cell.Ship
-//                || getNeighbour(coordinates, Direction.Down,field)!= Cell.Ship
-//                || getNeighbour(coordinates, Direction.Left,field)!= Cell.Ship
-//                || getNeighbour(coordinates, Direction.Right,field)!= Cell.Ship) {
-//            if
+        final Queue<Coordinates> queue = new LinkedList<>();
+        queue.add(coordinates);
+
+        while (!queue.isEmpty()) {
+            final Coordinates currentCoordinates = queue.poll();
+
+            for (final Direction direction : Direction.values()) {
+                final Coordinates currentNeighbour = Coordinates.getNeighbour(currentCoordinates, direction);
+                if (!field.contains(currentNeighbour))
+                    continue;
+
+                if (shipCells.contains(currentNeighbour))
+                    continue;
+
+                if (field.getCell(currentNeighbour) == Cell.Ship || field.getCell(currentNeighbour) == Cell.DamagedShip) {
+                    shipCells.add(currentNeighbour);
+                    queue.add(currentNeighbour);
+                }
+            }
+        }
+
+        return shipCells;
     }
 
-    private Cell getNeighbour(final Coordinates coordinates, final Direction direction, final Field field) {
-        return field.getCell(new Coordinates(coordinates.x + direction.getDx(), coordinates.y + direction.getDy()));
+    private boolean sankShipIfPossible(final Coordinates coordinates, final Field field) {
+        final List<Coordinates> shipCellCoordinates = getShipCellCoordinates(coordinates, field);
+
+        for (final Coordinates currentCellCoordinates : shipCellCoordinates)
+            if (field.getCell(currentCellCoordinates) == Cell.Ship)
+                return false;
+
+        markNeighboursAsShoted(shipCellCoordinates, field);
+
+        return true;
+    }
+
+    private void markNeighboursAsShoted(final List<Coordinates> shipCellCoordinates, final Field field) {
+        for (final Coordinates coordinates : shipCellCoordinates)
+            for (final Neighbour neighbour : Neighbour.values()) {
+                final Coordinates currentNeighbourCoordinates = Coordinates.getNeighbour(coordinates, neighbour);
+
+                if (!field.contains(currentNeighbourCoordinates))
+                    continue;
+
+                if (field.getCell(currentNeighbourCoordinates) == Cell.Water)
+                    field.setCell(currentNeighbourCoordinates, Cell.ShotedWater);
+            }
     }
 
     private Turn nextPlayer() {

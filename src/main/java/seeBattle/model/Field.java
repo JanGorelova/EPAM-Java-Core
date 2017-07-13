@@ -91,9 +91,10 @@ public final class Field {
     public final boolean hasShips() {
         for (int row = 0; row < getLength(); row++)
             for (int col = 0; col < getHeight(); col++)
-                if (cells[row][col] == Cell.Ship)
-                return false;
-        return true;
+                if (cells[row][col] == Cell.Ship) {
+                    return true;
+            }
+        return false;
     }
 }
 

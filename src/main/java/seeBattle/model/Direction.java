@@ -2,7 +2,7 @@ package seeBattle.model;
 
 import java.util.Random;
 
-public enum Direction {
+public enum Direction implements Directional {
     Up(0, -1),
     Down(0, 1),
     Left(-1, 0),
@@ -16,10 +16,12 @@ public enum Direction {
         this.dy = dy;
     }
 
+    @Override
     public final int getDx() {
         return dx;
     }
 
+    @Override
     public final int getDy() {
         return dy;
     }
