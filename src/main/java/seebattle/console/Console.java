@@ -20,12 +20,13 @@ public final class Console implements AutoCloseable {
             final String line = reader.readLine();
             final String[] parameters = line.split(" ");
 
-            if (parameters.length != 2)
+            if (parameters.length != 2) {
                 return null;
+            }
 
             return new Coordinates(Integer.parseInt(parameters[0]), Integer.parseInt(parameters[1]));
         } catch (final NumberFormatException e) {
-            return null;
+            throw new IllegalArgumentException("The exception :",e);
         } catch (final IOException e) {
             throw new RuntimeException(e);
         }
