@@ -15,27 +15,27 @@ public final class EatingRabbit {
         public void run() {
             try {
                 System.out.println("Put the number!");
-                    int k = System.in.read();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                int k = System.in.read();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-                isEnoughCarrot = false;
+            isEnoughCarrot = false;
             System.out.println(" The carrot is false");
-            }
-        }
-
-        public final static class  StopEating extends Thread {
-            @Override
-            public void run() {
-                System.out.println("Lets start");
-
-                while(isEnoughCarrot) {
-
-                }
-
-                System.out.println("We finished");
-            }
         }
     }
+
+    public final static class StopEating extends Thread {
+        @Override
+        public void run() {
+            System.out.println("Lets start");
+
+            while (isEnoughCarrot) {
+
+            }
+
+            System.out.println("We finished");
+        }
+    }
+}
 
