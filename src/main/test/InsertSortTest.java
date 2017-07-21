@@ -4,13 +4,16 @@ import org.junit.Before;
 import org.junit.Test;
 import sortings.InsertSort;
 
+import java.util.Arrays;
+
 public final class InsertSortTest {
     @Test
     public void testSort() {
         final int[] array = {8,7,6,5,4,3,2,1};
-        final int[] sortedArray = {1,2,3,4,5,6,7,8};
+        final int[] testArray = Arrays.copyOf(array,array.length);
+        Arrays.sort(array,0,array.length);
 
-        Assert.assertArrayEquals("This method works incorrectly",sortedArray, InsertSort.sortTest(array));
+        Assert.assertArrayEquals("This method works incorrectly",array, InsertSort.sortTest(testArray));
     }
 
 }
