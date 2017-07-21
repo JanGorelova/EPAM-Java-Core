@@ -1,4 +1,4 @@
-package seebattle.model;
+package seabattle.model;
 
 public enum ShotResult {
     Hit,

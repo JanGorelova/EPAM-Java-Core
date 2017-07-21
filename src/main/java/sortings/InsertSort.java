@@ -56,9 +56,9 @@ public final class InsertSort {
     }
 
     public static int[] sortTest(final int[] array) {
-        final int N = array.length;
+        final int n = array.length;
 
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < n; i++) {
             for (int j = i; j > 0 && isLess(array[j], array[j - 1]); j--) {
                 swap(array, j, j - 1);
             }

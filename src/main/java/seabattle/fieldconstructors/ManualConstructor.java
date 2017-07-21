@@ -1,6 +1,6 @@
-package seebattle.fieldconstructors;
+package seabattle.fieldconstructors;
 
-import seebattle.model.Field;
+import seabattle.model.Field;
 
 public final class ManualConstructor implements FieldConstructor {
     @Override

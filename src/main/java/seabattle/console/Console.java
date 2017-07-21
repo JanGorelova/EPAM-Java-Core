@@ -1,6 +1,6 @@
-package seebattle.console;
+package seabattle.console;
 
-import seebattle.model.Coordinates;
+import seabattle.model.Coordinates;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,7 +21,7 @@ public final class Console implements AutoCloseable {
             final String[] parameters = line.split(" ");
 
             if (parameters.length != 2) {
-                return null;
+                throw new RuntimeException("6");
             }
 
             return new Coordinates(Integer.parseInt(parameters[0]), Integer.parseInt(parameters[1]));

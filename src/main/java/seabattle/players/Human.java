@@ -1,9 +1,9 @@
-package seebattle.players;
+package seabattle.players;
 
-import seebattle.console.Console;
-import seebattle.fieldconstructors.RandomConstructor;
-import seebattle.model.Coordinates;
-import seebattle.model.Field;
+import seabattle.console.Console;
+import seabattle.fieldconstructors.RandomConstructor;
+import seabattle.model.Coordinates;
+import seabattle.model.Field;
 
 import java.io.IOException;
 

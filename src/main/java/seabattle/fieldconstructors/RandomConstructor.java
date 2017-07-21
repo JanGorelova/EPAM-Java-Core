@@ -1,7 +1,7 @@
-package seebattle.fieldconstructors;
+package seabattle.fieldconstructors;
 
-import seebattle.SeaBattle;
-import seebattle.model.*;
+import seabattle.SeaBattle;
+import seabattle.model.*;
 
 public final class RandomConstructor implements FieldConstructor {
     @Override

@@ -1,8 +1,8 @@
-package seebattle.players;
+package seabattle.players;
 
-import seebattle.fieldconstructors.RandomConstructor;
-import seebattle.model.Coordinates;
-import seebattle.model.Field;
+import seabattle.fieldconstructors.RandomConstructor;
+import seabattle.model.Coordinates;
+import seabattle.model.Field;
 
 public final class SmartComputer extends Player {
     public SmartComputer() {

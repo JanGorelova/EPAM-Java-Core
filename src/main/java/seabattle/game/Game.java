@@ -1,7 +1,7 @@
-package seebattle.game;
+package seabattle.game;
 
-import seebattle.model.*;
-import seebattle.players.Player;
+import seabattle.model.*;
+import seabattle.players.Player;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

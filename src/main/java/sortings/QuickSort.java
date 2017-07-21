@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 public final class QuickSort {
     public static void main(String[] args) {
-        final int[] array = arrayReader(25);
+//        final int[] array = arrayReader(25);
+        final int[] arrayTest = new int[]{2,4,5,7,8,9,11,1,0,5};
 
-        printArray(array);
-        doQSort(array, 0, array.length - 1);
-        printArray(array);
+        printArray(arrayTest);
+        doQSort(arrayTest, 0, arrayTest.length - 1);
+        printArray(arrayTest);
     }
 
     private static final int[] arrayReader(final int arrayElementsAmount) {
@@ -48,24 +49,24 @@ public final class QuickSort {
     }
 
     private static final int partition(final int[] array, final int start, final int end) {
-        int indexRight = start;
-        int indexLeft = end + 1;
+        int indexLeft = start;
+        int indexRight = end + 1;
         int comparableValue = array[start];
 
         while (true) {
-            while (array[++indexRight] < comparableValue) {
-                if (indexRight == end) break;
+            while (array[++indexLeft] < comparableValue) {
+                if (indexLeft == end) break;
             }
-            while (array[--indexLeft] > comparableValue) {
-                if (indexLeft == start) break;
+            while (array[--indexRight] > comparableValue) {
+                if (indexRight == start) break;
             }
-            if (indexLeft <= indexRight) break;
+            if (indexLeft >= indexRight) break;
 
             swap(array, indexRight, indexLeft);
         }
 
-        swap(array, start, indexLeft);
-        return indexLeft;
+        swap(array, start, indexRight);
+        return indexRight;
     }
 
     private static final void swap(final int[] array, final int indexRight, final int indexLeft) {

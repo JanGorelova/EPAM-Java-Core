@@ -1,7 +1,7 @@
-package seebattle.players;
+package seabattle.players;
 
-import seebattle.model.Coordinates;
-import seebattle.model.Field;
+import seabattle.model.Coordinates;
+import seabattle.model.Field;
 
 public abstract class Player {
     private final String name;

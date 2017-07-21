@@ -1,4 +1,4 @@
-package seebattle.game;
+package seabattle.game;
 
 enum Turn {
     Player1,

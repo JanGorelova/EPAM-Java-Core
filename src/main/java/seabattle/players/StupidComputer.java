@@ -1,9 +1,9 @@
-package seebattle.players;
+package seabattle.players;
 
-import seebattle.SeaBattle;
-import seebattle.fieldconstructors.RandomConstructor;
-import seebattle.model.Coordinates;
-import seebattle.model.Field;
+import seabattle.SeaBattle;
+import seabattle.fieldconstructors.RandomConstructor;
+import seabattle.model.Coordinates;
+import seabattle.model.Field;
 
 public final class StupidComputer extends Player {
     public StupidComputer() {

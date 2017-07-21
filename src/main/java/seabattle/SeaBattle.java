@@ -1,7 +1,7 @@
-package seebattle;
+package seabattle;
 
-import seebattle.game.Game;
-import seebattle.players.StupidComputer;
+import seabattle.game.Game;
+import seabattle.players.StupidComputer;
 
 import java.io.IOException;
 
