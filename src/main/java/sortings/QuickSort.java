@@ -41,36 +41,37 @@ public final class QuickSort {
     public static final void doQSort(final int[] array, final int start, final int end) {
         if (start >= end) return;
 
-        int j = partition(array, start, end);
+        int putCentralElement = partition(array, start, end);
 
-        doQSort(array, start, j - 1);
-        doQSort(array, j + 1, end);
+        doQSort(array, start, putCentralElement - 1);
+        doQSort(array, putCentralElement + 1, end);
     }
 
     private static final int partition(final int[] array, final int start, final int end) {
-        int i = start;
-        int j = end + 1;
+        int indexRight = start;
+        int indexLeft = end + 1;
         int comparableValue = array[start];
 
         while (true) {
-            while (array[++i] < comparableValue) {
-                if (i == end) break;
+            while (array[++indexRight] < comparableValue) {
+                if (indexRight == end) break;
             }
-            while (array[--j] > comparableValue) {
-                if (j == start) break;
+            while (array[--indexLeft] > comparableValue) {
+                if (indexLeft == start) break;
             }
-            if (j <= i) break;
-            swap(array, i, j);
+            if (indexLeft <= indexRight) break;
+            swap(array, indexRight, indexLeft);
         }
-        swap(array, start, j);
-        return j;
+
+        swap(array, start, indexLeft);
+        return indexLeft;
     }
 
-    private static final void swap(final int[] array, final int i, final int j) {
-        final int temp = array[j];
+    private static final void swap(final int[] array, final int indexRight, final int indexLeft) {
+        final int temp = array[indexLeft];
 
-        array[j] = array[i];
-        array[i] = temp;
+        array[indexLeft] = array[indexRight];
+        array[indexRight] = temp;
     }
 
     public static final int[] doQSortTest(final int[] array, final int start, final int end) {
