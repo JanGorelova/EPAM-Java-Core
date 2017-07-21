@@ -74,7 +74,7 @@ public final class QuickSort {
     }
 
     public static final int[] doQSortTest(final int[] array, final int start, final int end) {
-       doQSort(array,start,end);
+        doQSort(array, start, end);
 
         return array;
     }

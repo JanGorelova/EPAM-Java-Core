@@ -1,6 +1,5 @@
 package sortings;
 
-import java.util.Comparator;
 import java.util.Random;
 
 public final class InsertSort {
@@ -15,8 +14,8 @@ public final class InsertSort {
         final int N = array.length;
 
         for (int i = 0; i < N; i++) {
-            for (int j = i; j > 0 && isLess(array[j], array[j-1]) ; j--) {
-                swap(array,j,j-1);
+            for (int j = i; j > 0 && isLess(array[j], array[j - 1]); j--) {
+                swap(array, j, j - 1);
             }
         }
     }
@@ -60,8 +59,8 @@ public final class InsertSort {
         final int N = array.length;
 
         for (int i = 0; i < N; i++) {
-            for (int j = i; j > 0 && isLess(array[j], array[j-1]) ; j--) {
-                swap(array,j,j-1);
+            for (int j = i; j > 0 && isLess(array[j], array[j - 1]); j--) {
+                swap(array, j, j - 1);
             }
         }
         return array;
