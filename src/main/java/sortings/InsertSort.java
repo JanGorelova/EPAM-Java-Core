@@ -11,7 +11,7 @@ public final class InsertSort {
         printArray(array);
     }
 
-    private static void sort(final int[] array) {
+    public static void sort(final int[] array) {
         final int N = array.length;
 
         for (int i = 0; i < N; i++) {
@@ -54,5 +54,16 @@ public final class InsertSort {
         }
         System.out.println();
         System.out.println(builder);
+    }
+
+    public static int[] sortTest(final int[] array) {
+        final int N = array.length;
+
+        for (int i = 0; i < N; i++) {
+            for (int j = i; j > 0 && isLess(array[j], array[j-1]) ; j--) {
+                swap(array,j,j-1);
+            }
+        }
+        return array;
     }
 }

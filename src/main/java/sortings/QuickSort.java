@@ -3,7 +3,7 @@ package sortings;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public final class QuickSort<Integer> {
+public final class QuickSort {
     public static void main(String[] args) {
         final int[] array = arrayReader(25);
 
@@ -68,6 +68,7 @@ public final class QuickSort<Integer> {
 
     private static final void swap(final int[] array, final int i, final int j) {
         final int temp = array[j];
+
         array[j] = array[i];
         array[i] = temp;
     }
