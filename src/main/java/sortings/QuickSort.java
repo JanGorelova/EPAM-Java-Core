@@ -38,7 +38,7 @@ public final class QuickSort {
         System.out.println(builder);
     }
 
-    private static final void doQSort(final int[] array, final int start, final int end) {
+    public static final void doQSort(final int[] array, final int start, final int end) {
         if (start >= end) return;
 
         int j = partition(array, start, end);
@@ -73,4 +73,9 @@ public final class QuickSort {
         array[i] = temp;
     }
 
+    public static final int[] doQSortTest(final int[] array, final int start, final int end) {
+       doQSort(array,start,end);
+
+        return array;
+    }
 }
