@@ -5,8 +5,9 @@ import java.util.Scanner;
 
 public final class QuickSort<Integer> {
     public static void main(String[] args) {
-        final int[] array = new int[]{6, 5, 4, 3, 2, 1, 8, 7, 0, 12, 34, 89};
+        final int[] array = arrayReader(25);
 
+        printArray(array);
         doQSort(array, 0, array.length - 1);
         printArray(array);
     }
