@@ -60,6 +60,7 @@ public final class QuickSort {
                 if (indexLeft == start) break;
             }
             if (indexLeft <= indexRight) break;
+
             swap(array, indexRight, indexLeft);
         }
 

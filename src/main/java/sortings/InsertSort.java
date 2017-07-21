@@ -20,11 +20,11 @@ public final class InsertSort {
         }
     }
 
-    private static void swap(final int[] array, final int i, final int j) {
-        final int temporary = array[j];
+    private static void swap(final int[] array, final int indexRight, final int IndexLeft) {
+        final int temporary = array[IndexLeft];
 
-        array[j] = array[i];
-        array[i] = temporary;
+        array[IndexLeft] = array[indexRight];
+        array[indexRight] = temporary;
     }
 
     private static int[] randomizeFiller(final int arraySize) {
