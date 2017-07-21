@@ -5,17 +5,17 @@ import java.util.Scanner;
 
 public final class QuickSort<Integer> {
     public static void main(String[] args) {
-       final int[] array = new int[]{6,5,4,3,2,1,8,7,0,12,34,89};
+        final int[] array = new int[]{6, 5, 4, 3, 2, 1, 8, 7, 0, 12, 34, 89};
 
-        doQSort(array,0,array.length - 1);
+        doQSort(array, 0, array.length - 1);
         printArray(array);
     }
 
     private static final int[] arrayReader(final int arrayElementsAmount) {
         int[] array = new int[arrayElementsAmount];
 
-        try (final Scanner reader =  new Scanner(new InputStreamReader(System.in))) {
-            System.out.println("Print the array elements! You have to print: "+ arrayElementsAmount+ " numbers!");
+        try (final Scanner reader = new Scanner(new InputStreamReader(System.in))) {
+            System.out.println("Print the array elements! You have to print: " + arrayElementsAmount + " numbers!");
             for (int i = 0; i < array.length; i++) {
                 array[i] = reader.nextInt();
             }
@@ -31,20 +31,19 @@ public final class QuickSort<Integer> {
         for (int i = 0; i < array.length; i++) {
             if (i != array.length - 1) {
                 builder.append(array[i]).append(", ");
-            }
-            else builder.append(array[i]).append(" ]");
+            } else builder.append(array[i]).append(" ]");
         }
         System.out.println();
         System.out.println(builder);
     }
 
-    private static final void doQSort (final int[] array, final int start, final int end) {
+    private static final void doQSort(final int[] array, final int start, final int end) {
         if (start >= end) return;
 
-        int j = partition(array,start,end);
+        int j = partition(array, start, end);
 
-        doQSort(array,start,j - 1);
-        doQSort(array,j+1,end);
+        doQSort(array, start, j - 1);
+        doQSort(array, j + 1, end);
     }
 
     private static final int partition(final int[] array, final int start, final int end) {
@@ -52,7 +51,7 @@ public final class QuickSort<Integer> {
         int j = end + 1;
         int comparableValue = array[start];
 
-        while(true) {
+        while (true) {
             while (array[++i] < comparableValue) {
                 if (i == end) break;
             }
@@ -60,9 +59,9 @@ public final class QuickSort<Integer> {
                 if (j == start) break;
             }
             if (j <= i) break;
-            swap(array,i,j);
+            swap(array, i, j);
         }
-        swap(array,start,j);
+        swap(array, start, j);
         return j;
     }
 
