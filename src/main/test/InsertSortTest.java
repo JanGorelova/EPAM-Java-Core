@@ -1,6 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
-import sortings.InsertSort;
+import sortings.insertsort.InsertSort;
 
 import java.util.Arrays;
 

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public final class ArrayRandom {
-    final int[] randomizedArray;
+    private final int[] randomizedArray;
 
     public ArrayRandom(final int size, final int randomBorder) {
         this.randomizedArray = new int[size];
@@ -17,6 +17,10 @@ public final class ArrayRandom {
         final Random random = new Random();
 
         return random.nextInt(randomBorder);
+    }
+
+    public final int[] getRandomArray() {
+        return randomizedArray;
     }
 
     public final void printArray() {
