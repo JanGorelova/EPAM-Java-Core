@@ -47,11 +47,11 @@ public final class MergeSorter {
             mergedValues[targetIndex++] = array.getRandomArray()[rightIndex++];
         }
 
-        System.arraycopy(mergedValues,0,array.getRandomArray(),leftIndex, mergedValues.length);
+        System.arraycopy(mergedValues, 0, array.getRandomArray(), leftIndex, mergedValues.length);
     }
 
     public final int[] getSortedArray(final int lowerIndex, final int upperIndex) {
-        mergeSort(lowerIndex,upperIndex);
+        mergeSort(lowerIndex, upperIndex);
         return array.getRandomArray();
     }
 }

@@ -37,9 +37,13 @@ public final class RadixSort {
         int m = getMax(array);
 
         for (int exp = 1; m / exp > 0; exp *= 10) {
-            countSort(array,array.length);
+            countSort(array, array.length);
         }
     }
 
+    public final int[] getRadixSortedArray(final int[] array) {
+        radixSort(array);
 
+        return array;
+    }
 }

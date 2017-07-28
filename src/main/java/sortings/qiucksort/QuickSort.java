@@ -6,7 +6,7 @@ import java.util.Scanner;
 public final class QuickSort {
     public static void main(String[] args) {
 //        final int[] array = arrayReader(25);
-        final int[] arrayTest = new int[]{2,4,5,7,8,9,11,1,0,5};
+        final int[] arrayTest = new int[]{2, 4, 5, 7, 8, 9, 11, 1, 0, 5};
 
         printArray(arrayTest);
         doQSort(arrayTest, 0, arrayTest.length - 1);

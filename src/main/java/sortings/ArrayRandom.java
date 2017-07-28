@@ -24,6 +24,6 @@ public final class ArrayRandom {
     }
 
     public final String printArray() {
-       return Arrays.toString(randomizedArray);
+        return Arrays.toString(randomizedArray);
     }
 }
