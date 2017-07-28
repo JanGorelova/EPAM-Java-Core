@@ -3,32 +3,25 @@ package sortings.bubblesort;
 import sortings.ArrayRandom;
 
 public final class BubbleSorter {
-    private final ArrayRandom array;
 
-    public BubbleSorter(final ArrayRandom array) {
-        this.array = array;
-    }
-
-    public final void bubbleSort() {
-        for (int i = array.getRandomArray().length - 1; i > 0 ; i--) {
+    public final void bubbleSort(final int[] array) {
+        for (int i = array.length - 1; i > 0 ; i--) {
             for (int j = 0; j < i; j++) {
-                if (array.getRandomArray()[j] > array.getRandomArray()[j + 1])
-                    swap(j,j+1);
+                if (array[j] > array[j + 1])
+                    swap(j,j+1,array);
             }
         }
     }
 
-    private final void swap(final int one, final int two) {
-        int temporary = array.getRandomArray()[two];
+    private final void swap(final int one, final int two,final int[] array) {
+        int temporary = array[two];
 
-        array.getRandomArray()[two] = array.getRandomArray()[one];
-        array.getRandomArray()[one] = temporary;
+        array[two] = array[one];
+        array[one] = temporary;
     }
 
-    public final int[] getSortedArray() {
-        bubbleSort();
-        return array.getRandomArray();
+    public final int[] getSortedArray(final int[] array) {
+        bubbleSort(array);
+        return array;
     }
-
-
 }
