@@ -49,4 +49,9 @@ public final class MergeSorter {
 
         System.arraycopy(mergedValues,0,array.getRandomArray(),leftIndex, mergedValues.length);
     }
+
+    public final int[] getSortedArray(final int lowerIndex, final int upperIndex) {
+        mergeSort(lowerIndex,upperIndex);
+        return array.getRandomArray();
+    }
 }

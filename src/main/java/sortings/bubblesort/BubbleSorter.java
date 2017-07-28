@@ -25,5 +25,10 @@ public final class BubbleSorter {
         array.getRandomArray()[one] = temporary;
     }
 
+    public final int[] getSortedArray() {
+        bubbleSort();
+        return array.getRandomArray();
+    }
+
 
 }

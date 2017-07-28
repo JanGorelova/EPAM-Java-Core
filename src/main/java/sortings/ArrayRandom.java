@@ -23,7 +23,7 @@ public final class ArrayRandom {
         return randomizedArray;
     }
 
-    public final void printArray() {
-        Arrays.toString(randomizedArray);
+    public final String printArray() {
+       return Arrays.toString(randomizedArray);
     }
 }
