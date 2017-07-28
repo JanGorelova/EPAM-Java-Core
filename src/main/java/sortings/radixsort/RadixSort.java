@@ -14,18 +14,23 @@ public final class RadixSort {
         return max;
     }
 
-    final static void countSort(final int[] array, final int exp) {
+    final static void countSort(final int[] array, final int value) {
         int[] output = new int[array.length];
         int i;
         int[] count = new int[10];
         Arrays.fill(count, 0);
 
         for (int j = 0; j < array.length; j++) {
-            count[(array[j] / exp) % 10]++;
+            count[(array[j] / value) % 10]++;
         }
 
         for (int j = 1; j < 10; j++) {
             count[j] += count[j - 1];
+        }
+
+        for (int j = array.length - 1 ; j >= 0; j--) {
+            output[count[ (array[j]/value)%10 ] - 1] = array[j];
+            count[ (array[j]/value)%10 ]--;
         }
 
         for (int j = 0; j < array.length; j++) {
@@ -37,7 +42,7 @@ public final class RadixSort {
         int m = getMax(array);
 
         for (int exp = 1; m / exp > 0; exp *= 10) {
-            countSort(array, array.length);
+            countSort(array,exp);
         }
     }
 
