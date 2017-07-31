@@ -16,6 +16,6 @@ public final class MergeSortTest {
 
         Arrays.sort(array, 0, array.length);
 
-        Assert.assertArrayEquals("This method works incorrectly", array,mergeSorter.getSortedArray(0,testArray.length - 1,testArray));
+        Assert.assertArrayEquals("This method works incorrectly.", array,mergeSorter.getSortedArray(0,testArray.length - 1,testArray));
     }
 }
