@@ -3,27 +3,21 @@ package sortings.mergesort;
 import sortings.ArrayRandom;
 
 public final class MergeSorter {
-    private final ArrayRandom array;
-
-    public MergeSorter(final ArrayRandom array) {
-        this.array = array;
-    }
-
-    public void mergeSort(final int lowerIndex, final int upperIndex) {
+    public void mergeSort(final int lowerIndex, final int upperIndex, final int[] array) {
 
         if (lowerIndex == upperIndex) {
             return;
         } else {
             int middle = (lowerIndex + upperIndex) / 2;
 
-            mergeSort(lowerIndex, middle);
-            mergeSort(middle + 1, upperIndex);
+            mergeSort(lowerIndex, middle,array);
+            mergeSort(middle + 1, upperIndex,array);
 
-            merge(lowerIndex, middle + 1, upperIndex);
+            merge(lowerIndex, middle + 1, upperIndex,array);
         }
     }
 
-    private void merge(final int lowerIndex, final int split, int upperIndex) {
+    private void merge(final int lowerIndex, final int split, int upperIndex, final int[] array) {
         final int[] mergedValues = new int[upperIndex - lowerIndex + 1];
 
         int leftIndex = lowerIndex;
@@ -32,26 +26,26 @@ public final class MergeSorter {
         int targetIndex = 0;
 
         while (leftIndex <= split && rightIndex <= upperIndex) {
-            if (array.getRandomArray()[leftIndex] < array.getRandomArray()[rightIndex]) {
-                mergedValues[targetIndex++] = array.getRandomArray()[leftIndex++];
+            if (array[leftIndex] < array[rightIndex]) {
+                mergedValues[targetIndex++] = array[leftIndex++];
             } else {
-                mergedValues[targetIndex++] = array.getRandomArray()[rightIndex++];
+                mergedValues[targetIndex++] = array[rightIndex++];
             }
         }
 
         while (leftIndex <= split) {
-            mergedValues[targetIndex++] = array.getRandomArray()[leftIndex++];
+            mergedValues[targetIndex++] = array[leftIndex++];
         }
 
         while (rightIndex <= upperIndex) {
-            mergedValues[targetIndex++] = array.getRandomArray()[rightIndex++];
+            mergedValues[targetIndex++] = array[rightIndex++];
         }
 
-        System.arraycopy(mergedValues, 0, array.getRandomArray(), leftIndex, mergedValues.length);
+        System.arraycopy(mergedValues, 0, array, leftIndex, mergedValues.length);
     }
 
-    public final int[] getSortedArray(final int lowerIndex, final int upperIndex) {
-        mergeSort(lowerIndex, upperIndex);
-        return array.getRandomArray();
+    public final int[] getSortedArray(final int lowerIndex, final int upperIndex, final int[] array) {
+        mergeSort(lowerIndex, upperIndex,array);
+        return array;
     }
 }

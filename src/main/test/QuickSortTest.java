@@ -1,6 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
-import sortings.qiucksort.QuickSort;
+import sortings.qiucksort.QuickSorter;
 
 import java.util.Arrays;
 
@@ -11,6 +11,6 @@ public final class QuickSortTest {
         final int[] testArray = Arrays.copyOf(array, array.length);
         Arrays.sort(array, 0, array.length);
 
-        Assert.assertArrayEquals("This method works incorrectly", array, QuickSort.doQSortTest(testArray, 0, testArray.length - 1));
+        Assert.assertArrayEquals("This method works incorrectly", array, QuickSorter.doQSortTest(testArray, 0, testArray.length - 1));
     }
 }

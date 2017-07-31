@@ -2,7 +2,7 @@ package sortings.insertsort;
 
 import java.util.Random;
 
-public final class InsertSort {
+public final class InsertSorter {
     public static void main(String[] args) {
         final int[] array = randomizeFiller(100);
         printArray(array);

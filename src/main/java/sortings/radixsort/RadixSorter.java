@@ -2,7 +2,7 @@ package sortings.radixsort;
 
 import java.util.Arrays;
 
-public final class RadixSort {
+public final class RadixSorter {
     final static int getMax(final int array[]) {
         int max = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -28,9 +28,9 @@ public final class RadixSort {
             count[j] += count[j - 1];
         }
 
-        for (int j = array.length - 1 ; j >= 0; j--) {
-            output[count[ (array[j]/value)%10 ] - 1] = array[j];
-            count[ (array[j]/value)%10 ]--;
+        for (int j = array.length - 1; j >= 0; j--) {
+            output[count[(array[j] / value) % 10] - 1] = array[j];
+            count[(array[j] / value) % 10]--;
         }
 
         for (int j = 0; j < array.length; j++) {
@@ -42,7 +42,7 @@ public final class RadixSort {
         int m = getMax(array);
 
         for (int exp = 1; m / exp > 0; exp *= 10) {
-            countSort(array,exp);
+            countSort(array, exp);
         }
     }
 
