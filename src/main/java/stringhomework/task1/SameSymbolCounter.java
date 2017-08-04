@@ -5,11 +5,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public final class SameSymbolCounter {
     public static void main(String[] args) {
         SameSymbolCounter counter = new SameSymbolCounter();
+        Object object = new Object();
 
         System.out.println(counter.getSymbolValue(counter.getCharsFromText()));
     }

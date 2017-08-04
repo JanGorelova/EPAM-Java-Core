@@ -1,7 +1,5 @@
 package sortings.mergesort;
 
-import sortings.ArrayRandom;
-
 public final class MergeSorter {
     public void mergeSort(final int lowerIndex, final int upperIndex, final int[] array) {
 
