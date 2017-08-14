@@ -39,9 +39,9 @@ public final class RadixSorter {
     }
 
     final static void radixSort(final int[] array) {
-        int m = getMax(array);
+        int maxValue = getMax(array);
 
-        for (int exp = 1; m / exp > 0; exp *= 10) {
+        for (int exp = 1; maxValue / exp > 0; exp *= 10) {
             countSort(array, exp);
         }
     }

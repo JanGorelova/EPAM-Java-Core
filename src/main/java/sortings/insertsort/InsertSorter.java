@@ -40,7 +40,6 @@ public final class InsertSorter {
 
     private static boolean isLess(final Comparable first, final Comparable second) {
         return first.compareTo(second) < 0;
-
     }
 
     private static final void printArray(final int[] array) {
@@ -49,7 +48,7 @@ public final class InsertSorter {
         for (int i = 0; i < array.length; i++) {
             if (i != array.length - 1) {
                 builder.append(array[i]).append(", ");
-            } else builder.append(array[i]).append(" ]");
+            } else {builder.append(array[i]).append(" ]");}
         }
         System.out.println();
         System.out.println(builder);
@@ -63,6 +62,7 @@ public final class InsertSorter {
                 swap(array, j, j - 1);
             }
         }
+
         return array;
     }
 }
