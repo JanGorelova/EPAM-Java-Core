@@ -1,4 +1,4 @@
-package sortings.qiucksort;
+package sortings.quicksort;
 
 import java.io.InputStreamReader;
 import java.util.Scanner;

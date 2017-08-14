@@ -1,6 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
-import sortings.qiucksort.QuickSorter;
+import sortings.quicksort.QuickSorter;
 
 import java.util.Arrays;
 
