@@ -1,16 +1,17 @@
 package threadsreader;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 
 public final class FileAnalyzer {
+    private static final HashMap<UserVisit, Integer> statistics = new HashMap<>();
+
     public static void main(final String[] files) throws InterruptedException {
-        final ConcurrentHashMap<UserInformation, Integer> concurrentHashMap = new ConcurrentHashMap<>();
-        final List<Thread> threads =  new ArrayList<>();
+        final List<Thread> threads = new ArrayList<>();
 
         for (String file : files) {
-            threads.add(new Thread(new CSVFileReader(file,concurrentHashMap)));
+            threads.add(new Thread(new CSVFileReader(file, FileAnalyzer::addVisit)));
         }
 
         for (Thread thread: threads) {
@@ -21,6 +22,15 @@ public final class FileAnalyzer {
             thread.join();
         }
 
-        new CSVFileWriter("d:\\out.csv", concurrentHashMap).run();
+        new CSVFileWriter("d:\\out.csv", statistics).run();
+    }
+
+    private static synchronized void addVisit(final UserVisit userVisit) {
+        if (statistics.containsKey(userVisit)) {
+            Integer currentTime = statistics.get(userVisit);
+            statistics.put(userVisit, currentTime + userVisit.time);
+        } else {
+            statistics.put(userVisit, userVisit.time);
+        }
     }
 }

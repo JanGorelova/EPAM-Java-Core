@@ -3,24 +3,15 @@ package threadsreader;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Consumer;
 
 public final class CSVFileReader implements Runnable {
     private final String filePath;
-    private final ConcurrentHashMap<UserInformation,Integer> concurrentHashMap;
+    private final Consumer<UserVisit> onUserVisit;
 
-    public CSVFileReader(final String filePath, final ConcurrentHashMap<UserInformation, Integer> concurrentHashMap) {
-        this.filePath = filePath;
-        this.concurrentHashMap = concurrentHashMap;
-    }
-
-    public final void timeCounter(final ConcurrentHashMap<UserInformation, Integer> concurrentHashMap, final UserInformation userInformation, final Integer time) {
-        if (concurrentHashMap.containsKey(userInformation)) {
-            Integer currentTime = concurrentHashMap.get(userInformation);
-            concurrentHashMap.put(userInformation, currentTime + time);
-        } else {
-            concurrentHashMap.put(userInformation, time);
-        }
+    public CSVFileReader(final String filePath, final Consumer<UserVisit> onUserVisit) {
+        this.onUserVisit = onUserVisit;
+        this.filePath    = filePath;
     }
 
     @Override
@@ -38,7 +29,7 @@ public final class CSVFileReader implements Runnable {
                 String url = info[1];
                 int time = Integer.parseInt(info[2]);
 
-                timeCounter(concurrentHashMap,new UserInformation(id,url),time);
+                onUserVisit.accept(new UserVisit(id, url, time));
             }
         } catch (final IOException e) {
             throw new RuntimeException(e);

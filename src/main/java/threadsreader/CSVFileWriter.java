@@ -2,13 +2,13 @@ package threadsreader;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.Map;
 
-public final class CSVFileWriter implements Runnable{
-    private final ConcurrentHashMap<UserInformation,Integer> concurrentHashMap;
+public final class CSVFileWriter implements Runnable {
+    private final Map<UserVisit,Integer> concurrentHashMap;
     private final String filePath;
 
-    public CSVFileWriter(final String filePath, final ConcurrentHashMap<UserInformation, Integer> concurrentHashMap) {
+    public CSVFileWriter(final String filePath, final Map<UserVisit, Integer> concurrentHashMap) {
         this.concurrentHashMap = concurrentHashMap;
         this.filePath = filePath;
     }
@@ -16,7 +16,7 @@ public final class CSVFileWriter implements Runnable{
     @Override
     public final void run() {
         try(final FileWriter writer = new FileWriter(filePath)) {
-            for (final UserInformation information : concurrentHashMap.keySet()) {
+            for (final UserVisit information : concurrentHashMap.keySet()) {
                 writer.write(information.id + ";" + information.url + ";" + concurrentHashMap.get(information) + "\n");
             }
         } catch (final IOException e) {
