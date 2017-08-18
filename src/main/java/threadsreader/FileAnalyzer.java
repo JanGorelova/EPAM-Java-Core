@@ -1,5 +1,9 @@
 package threadsreader;
 
+import threadsreader.io.CSVFileReader;
+import threadsreader.io.CSVFileWriter;
+import threadsreader.model.UserVisit;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

@@ -1,12 +1,12 @@
-package threadsreader;
+package threadsreader.model;
 
 import java.util.Arrays;
 import java.util.Objects;
 
 public final class UserVisit {
-    final int id;
-    final String url;
-    final Integer time;
+    public final int id;
+    public final String url;
+    public final Integer time;
 
     public UserVisit(final int id, final String url, final Integer time) {
         this.id = id;
@@ -26,6 +26,6 @@ public final class UserVisit {
 
     @Override
     public String toString() {
-        return "User " + id + " have visited site " + url;
+        return id + ";" + url + ";" + time;
     }
 }

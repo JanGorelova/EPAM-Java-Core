@@ -1,4 +1,6 @@
-package threadsreader;
+package threadsreader.io;
+
+import threadsreader.model.UserVisit;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
