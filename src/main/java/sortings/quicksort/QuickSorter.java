@@ -7,8 +7,8 @@ public final class QuickSorter {
     /**
      * reads array from console
      *
-     * @param arrayElementsAmount
-     * @return new array with size @param read from console
+     * @param arrayElementsAmount size of the new read array
+     * @return new array read from the console
      */
     private static final int[] arrayReader(final int arrayElementsAmount) {
         int[] array = new int[arrayElementsAmount];
@@ -24,6 +24,11 @@ public final class QuickSorter {
         return array;
     }
 
+    /**
+     * prints the specified array in the console
+     *
+     * @param array to be printed
+     */
     private static final void printArray(final int[] array) {
         final StringBuilder builder = new StringBuilder(" [");
 
@@ -36,6 +41,15 @@ public final class QuickSorter {
         System.out.println(builder);
     }
 
+    /**
+     * sorts the specified array from start to end index in the array
+     * using the recursive quick sort algorithm
+     * complexity in average O(n*log(n))
+     *
+     * @param array to be sorted
+     * @param start index sort from
+     * @param end index sort to
+     */
     public static final void doQSort(final int[] array, final int start, final int end) {
         if (start >= end) return;
 
@@ -45,6 +59,15 @@ public final class QuickSorter {
         doQSort(array, putCentralElement + 1, end);
     }
 
+    /**
+     * finda an index of the base element must be
+     *
+     * @param array to sort
+     * @param start index sort from
+     * @param end index sort to
+     * @return index of the basic element that elements in the right part of the array are bigger than base element
+     * and in the left part are smaller
+     */
     private static final int partition(final int[] array, final int start, final int end) {
         int indexLeft = start;
         int indexRight = end + 1;
@@ -66,6 +89,13 @@ public final class QuickSorter {
         return indexRight;
     }
 
+    /**
+     * swap the value with index right and value with index left in specified array
+     *
+     * @param indexRight first element to swap index
+     * @param indexLeft second element to swap index
+     * @param array
+     */
     private static final void swap(final int[] array, final int indexRight, final int indexLeft) {
         final int temp = array[indexLeft];
 
@@ -73,6 +103,14 @@ public final class QuickSorter {
         array[indexRight] = temp;
     }
 
+    /**
+     * sorts array and returns it, used in test directory
+     *
+     * @param array to sort
+     * @param start index sort from
+     * @param end index sort to
+     * @return sorted array
+     */
     public static final int[] doQSortTest(final int[] array, final int start, final int end) {
         doQSort(array, start, end);
 
