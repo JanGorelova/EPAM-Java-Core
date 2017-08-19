@@ -1,7 +1,13 @@
 package sortings.bubblesort;
 
-public final class BubbleSorter {
+import java.util.Arrays;
 
+public final class BubbleSorter {
+    /**
+     * Sorts the specified array in ascending order
+     *
+     * @param array
+     */
     public final void bubbleSort(final int[] array) {
         for (int i = array.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
@@ -11,6 +17,13 @@ public final class BubbleSorter {
         }
     }
 
+    /**
+     * swap the value with index one and value with index two in array
+     *
+     * @param one
+     * @param two
+     * @param array
+     */
     private final void swap(final int one, final int two, final int[] array) {
         int temporary = array[two];
 
