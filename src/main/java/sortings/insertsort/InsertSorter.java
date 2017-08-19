@@ -8,7 +8,7 @@ public final class InsertSorter {
      * using the insert algorithm
      * complexity equals O(n^2)
      *
-     *@param array
+     *@param array to be sorted
      */
     public static void sort(final int[] array) {
         final int N = array.length;
@@ -23,8 +23,8 @@ public final class InsertSorter {
     /**
      * swap the value with index right and value with index left in specified array
      *
-     * @param indexRight
-     * @param indexLeft
+     * @param indexRight first element to swap index
+     * @param indexLeft second element to swap index
      * @param array
      */
     private static void swap(final int[] array, final int indexRight, final int indexLeft) {
@@ -58,7 +58,7 @@ public final class InsertSorter {
     /**
      * prints array in the console
      *
-     * @param array
+     * @param array to be printed
      */
     private static final void printArray(final int[] array) {
         final StringBuilder builder = new StringBuilder(" [");
@@ -76,7 +76,7 @@ public final class InsertSorter {
      * sorts array and return it
      * used in test directory
      *
-     * @param array
+     * @param array to be sorted
      * @return sorted array
      */
     public static int[] sortTest(final int[] array) {

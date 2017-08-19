@@ -4,9 +4,9 @@ public final class BinarySearch {
     /**
      * Searches the key value in the array
      *
-     * @param key
-     * @param array
-     * @return index of the element with value = key
+     * @param key searched value
+     * @param array array which in the key is searched
+     * @return index of the element in specified array with value = key
      * @throws IllegalArgumentException if there is no such element = key in the array
      */
 

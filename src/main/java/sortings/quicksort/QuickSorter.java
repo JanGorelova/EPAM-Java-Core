@@ -4,7 +4,12 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public final class QuickSorter {
-
+    /**
+     * reads array from console
+     *
+     * @param arrayElementsAmount
+     * @return new array with size @param read from console
+     */
     private static final int[] arrayReader(final int arrayElementsAmount) {
         int[] array = new int[arrayElementsAmount];
 

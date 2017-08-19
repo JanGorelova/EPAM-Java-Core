@@ -4,7 +4,7 @@ public final class MergeSorter {
     /**
      * Sorts the specified array in ascending order
      * using the recursive merge algorithm
-     * complexity O(n*log(n))
+     * complexity O(n*log(n)), needs O(n) extra memory
      *
      * @param lowerIndex
      * @param upperIndex

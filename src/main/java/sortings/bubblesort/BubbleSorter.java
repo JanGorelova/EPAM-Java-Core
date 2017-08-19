@@ -22,8 +22,8 @@ public final class BubbleSorter {
     /**
      * swap the value with index one and value with index two in specified array
      *
-     * @param one
-     * @param two
+     * @param one first element to swap index
+     * @param two second element to swap index
      * @param array
      */
     private final void swap(final int one, final int two, final int[] array) {
