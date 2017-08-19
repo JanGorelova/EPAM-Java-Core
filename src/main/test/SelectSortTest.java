@@ -14,6 +14,6 @@ public final class SelectSortTest {
 
         Arrays.sort(array, 0, array.length);
 
-        Assert.assertArrayEquals("This method works incorrectly", array, selectSorter.getSelectSortedAray(testArray));
+        Assert.assertArrayEquals("This method works incorrectly", array, selectSorter.getSelectSortedArray(testArray));
     }
 }
