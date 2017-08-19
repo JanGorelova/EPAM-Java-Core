@@ -5,6 +5,8 @@ import java.util.Arrays;
 public final class BubbleSorter {
     /**
      * Sorts the specified array in ascending order
+     * using the bubble algorithm
+     * complexity equals O(n^2)
      *
      * @param array
      */
@@ -18,7 +20,7 @@ public final class BubbleSorter {
     }
 
     /**
-     * swap the value with index one and value with index two in array
+     * swap the value with index one and value with index two in specified array
      *
      * @param one
      * @param two
