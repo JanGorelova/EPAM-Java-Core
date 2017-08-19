@@ -1,6 +1,15 @@
 package binarysearch;
 
 public final class BinarySearch {
+    /**
+     * Searches the key value in the array
+     *
+     * @param key
+     * @param array
+     * @return index of the element with value = key
+     * @throws IllegalArgumentException if there is no such element = key in the array
+     */
+
     public final int search(final int key, final int[] array) {
         int lowIndex = 0;
         int highIndex = array.length - 1;
