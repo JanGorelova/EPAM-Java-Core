@@ -1,6 +1,15 @@
 package sortings.mergesort;
 
 public final class MergeSorter {
+    /**
+     * Sorts the specified array in ascending order
+     * using the recursive merge algorithm
+     * complexity O(n*log(n))
+     *
+     * @param lowerIndex
+     * @param upperIndex
+     * @param array
+     */
     public void mergeSort(final int lowerIndex, final int upperIndex, final int[] array) {
 
         if (lowerIndex == upperIndex) {
@@ -15,6 +24,14 @@ public final class MergeSorter {
         }
     }
 
+    /**
+     * merges two arrays in new one in ascending order
+     *
+     * @param lowerIndex
+     * @param split
+     * @param upperIndex
+     * @param array
+     */
     private void merge(final int lowerIndex, final int split, int upperIndex, final int[] array) {
         final int[] mergedValues = new int[upperIndex - lowerIndex + 1];
 
