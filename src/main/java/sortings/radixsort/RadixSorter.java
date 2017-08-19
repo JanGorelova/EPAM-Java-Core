@@ -3,6 +3,12 @@ package sortings.radixsort;
 import java.util.Arrays;
 
 public final class RadixSorter {
+    /**
+     * finds maximum value in the specified array
+     *
+     * @param array to find max value
+     * @return max value in the specified array
+     */
     final static int getMax(final int array[]) {
         int max = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -14,6 +20,12 @@ public final class RadixSorter {
         return max;
     }
 
+    /**
+     * puts the number bit numbers in corresponding bucket
+     *
+     * @param array to be sorted
+     * @param value bit number considered
+     */
     final static void countSort(final int[] array, final int value) {
         int[] output = new int[array.length];
         int i;
@@ -38,6 +50,14 @@ public final class RadixSorter {
         }
     }
 
+    /**
+     * sorts the specified array
+     * using the radix sort algorithm
+     * complexity in best case
+     * in worst case
+     *
+     * @param array to be sorted
+     */
     final static void radixSort(final int[] array) {
         int maxValue = getMax(array);
 
