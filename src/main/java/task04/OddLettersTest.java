@@ -4,11 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public final class Test {
+public final class OddLettersTest {
 
     public static void main(String[] args) {
         System.out.println("Put the Word? please!");
-        Test main = new Test();
+        OddLettersTest main = new OddLettersTest();
         System.out.println(main.getOddLetterWord());
     }
 
