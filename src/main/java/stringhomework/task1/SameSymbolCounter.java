@@ -4,9 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 public final class SameSymbolCounter {
     public static void main(String[] args) {
@@ -38,7 +35,7 @@ public final class SameSymbolCounter {
         return builder.toString();
     }
 
-    private LongestCharacterSubsequence getSymbolValue(final String string) {
+    private LongestCharacterSubSequence getSymbolValue(final String string) {
         Character character = string.charAt(0);
         int maxValue = 1;
         int count = 0;
@@ -55,6 +52,6 @@ public final class SameSymbolCounter {
                 count = 1;
         }
 
-        return new LongestCharacterSubsequence(character, maxValue);
+        return new LongestCharacterSubSequence(character, maxValue);
     }
 }
