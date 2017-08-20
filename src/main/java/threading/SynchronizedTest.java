@@ -54,7 +54,7 @@ public final class SynchronizedTest {
                 e.printStackTrace();
             }
             cash -= price;
-            System.out.println(" Done, tour cash is equal: " + cash + " $");
+            System.out.println("Done, tour cash is equal: " + cash + " $");
         } else {
             System.err.println("You don't have enough money!");
         }

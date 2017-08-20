@@ -2,6 +2,10 @@ package threading;
 
 public final class YieldTest {
     public static void main(String[] args) {
+        /**
+         * creating new Thread by virtue of implementation of the anonymous class
+         * testing the yield test
+         */
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
