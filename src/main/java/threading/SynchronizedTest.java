@@ -1,9 +1,14 @@
 package threading;
 
-public final class SausageBying {
+public final class SynchronizedTest {
     private static int cash = 100;
     private static int price = 1;
 
+    /**
+     * test working with few threads
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println("You have: " + cash + " $");
 
@@ -35,7 +40,13 @@ public final class SausageBying {
         }).start();
     }
 
-    private static void byeSausage(final int price, final long sleepTime) {
+    /**
+     * synchronized method implementation
+     *
+     * @param price of the sausage
+     * @param sleepTime time of the thread sleep
+     */
+    private synchronized static void byeSausage(final int price, final long sleepTime) {
         if (cash >= price) {
             try {
                 Thread.sleep(sleepTime);
