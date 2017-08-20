@@ -12,7 +12,12 @@ public final class OddLettersTest {
         System.out.println(main.getOddLetterWord());
     }
 
-    public final String getOddLetterWord() {
+    /**
+     * creates a new string with letters at the odd places
+     *
+     * @return string with letters which indexes are the odd numbers
+     */
+     private String getOddLetterWord() {
         final StringBuilder builder = new StringBuilder();
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
@@ -20,7 +25,7 @@ public final class OddLettersTest {
             char[] wordArray = word.toCharArray();
 
             for (int i = 0; i < wordArray.length; i++) {
-                if (i % 2 == 0)
+                if (i % 2 != 0)
                     builder.append(wordArray[i]);
             }
         } catch (IOException e) {
