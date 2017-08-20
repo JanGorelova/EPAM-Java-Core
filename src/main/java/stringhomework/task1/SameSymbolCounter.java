@@ -8,11 +8,15 @@ import java.io.IOException;
 public final class SameSymbolCounter {
     public static void main(String[] args) {
         SameSymbolCounter counter = new SameSymbolCounter();
-        Object object = new Object();
 
         System.out.println(counter.getSymbolValue(counter.getCharsFromText()));
     }
 
+    /**
+     * creates line of text read from file
+     *
+     * @return read chars from text written in file
+     */
     private String getCharsFromText() {
         final File file = new File("d:\\projects\\doc.txt");
 
@@ -35,6 +39,13 @@ public final class SameSymbolCounter {
         return builder.toString();
     }
 
+    /**
+     * creates a new object of class LongestCharacterSubSequence
+     * encapsulating the longest sub sequence of the character
+     *
+     * @param string to be analyzed
+     * @return the object of class LongestCharacterSubSequence with longest character sub sequence information
+     */
     private LongestCharacterSubSequence getSymbolValue(final String string) {
         Character character = string.charAt(0);
         int maxValue = 1;
