@@ -2,20 +2,27 @@ package threading;
 
 import java.io.IOException;
 
-public final class EatingRabbit {
+public final class VolatileTest {
     private static volatile boolean isEnoughCarrot = true;
-
+    /**
+     * tests the usage of the volatile key word
+     *
+     * @param args from command line
+     */
     public static void main(String[] args) {
         new Eating().start();
         new StopEating().start();
     }
 
+    /**
+     * annotation of the inner class which can be started in the new Thread
+     */
     public final static class Eating extends Thread {
         @Override
         public void run() {
             try {
                 System.out.println("Put the number!");
-                int k = System.in.read();
+                int answer = System.in.read();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -25,6 +32,9 @@ public final class EatingRabbit {
         }
     }
 
+    /**
+     * annotation of the inner class which can be started in the new Thread
+     */
     public final static class StopEating extends Thread {
         @Override
         public void run() {
