@@ -4,6 +4,11 @@ import seabattle.SeaBattle;
 import seabattle.model.*;
 
 public final class RandomConstructor implements FieldConstructor {
+    /**
+     * constructs new Field with random ship location
+     *
+     * @return new Field
+     */
     @Override
     public final Field construct() {
         final Field field = new Field(SeaBattle.FIELD_LENGTH, SeaBattle.FIELD_HEIGHT);
@@ -24,6 +29,14 @@ public final class RandomConstructor implements FieldConstructor {
         return field;
     }
 
+    /**
+     * places ship in the field
+     *
+     * @param field to be considered
+     * @param coordinates of the installed ship
+     * @param direction of the ship location
+     * @param size
+     */
     private void placeShip(final Field field, final Coordinates coordinates, final Direction direction, final int size) {
         for (int i = 0; i < size; i++)
             field.setCell(new Coordinates(coordinates.x + i * direction.getDx(), coordinates.y + i * direction.getDy()), Cell.Ship);
@@ -41,8 +54,8 @@ public final class RandomConstructor implements FieldConstructor {
         if (!field.contains(coordinates))
             return false;
 
-        for (final Neighbour neigbour : Neighbour.values()) {
-            final Coordinates neighbourCoordinates = Coordinates.getNeighbour(coordinates, neigbour);
+        for (final Neighbour neighbour : Neighbour.values()) {
+            final Coordinates neighbourCoordinates = Coordinates.getNeighbour(coordinates, neighbour);
             if (field.contains(neighbourCoordinates) && (field.getCell(neighbourCoordinates) != Cell.Water))
                 return false;
         }
