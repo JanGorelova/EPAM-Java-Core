@@ -21,6 +21,9 @@ public final class CSVFileWriter implements Runnable {
         this.filePath = filePath;
     }
 
+    /**
+     * writes to file user visit statistics
+     */
     @Override
     public final void run() {
         try(final FileWriter writer = new FileWriter(filePath)) {
