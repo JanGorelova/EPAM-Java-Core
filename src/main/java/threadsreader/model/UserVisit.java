@@ -8,6 +8,13 @@ public final class UserVisit {
     public final String url;
     public final Integer time;
 
+    /**
+     * creates new UserVisit with specified id,url and time
+     *
+     * @param id users id
+     * @param url web site url visited
+     * @param time time spent on the web site
+     */
     public UserVisit(final int id, final String url, final Integer time) {
         this.id = id;
         this.url = url;
