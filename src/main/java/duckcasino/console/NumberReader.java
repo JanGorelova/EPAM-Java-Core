@@ -12,10 +12,17 @@ public final class NumberReader {
         this.reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
+    /**
+     * creates new command with parameters from console
+     *
+     * @return command from console
+     * @throws IOException
+     */
     public final Command getCommand() throws IOException {
         final String line         = reader.readLine();
         final String[] parameters = line.split(" ");
         final int duckNumber;
+
         try {
             duckNumber = Integer.parseInt(parameters[0]);
         } catch (final Exception e) {
