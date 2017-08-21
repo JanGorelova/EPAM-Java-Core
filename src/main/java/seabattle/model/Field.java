@@ -3,6 +3,12 @@ package seabattle.model;
 public final class Field {
     private final Cell[][] cells;
 
+    /**
+     * creates field with specified sizes
+     *
+     * @param length of the field
+     * @param height of the field
+     */
     public Field(final int length, final int height) {
         this.cells = new Cell[length][height];
 
@@ -60,6 +66,12 @@ public final class Field {
         return builder.toString();
     }
 
+    /**
+     * shows shot results
+     *
+     * @param coordinates of the shoot
+     * @return results of the shot
+     */
     public final ShotResult shot(final Coordinates coordinates) {
         switch (getCell(coordinates)) {
             case Water:
