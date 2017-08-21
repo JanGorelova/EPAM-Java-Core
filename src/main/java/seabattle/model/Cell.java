@@ -2,7 +2,7 @@ package seabattle.model;
 
 public enum Cell {
     Water,
-    ShotedWater,
+    ShootWater,
     Ship,
     DamagedShip
 }

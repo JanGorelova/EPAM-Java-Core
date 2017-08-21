@@ -11,6 +11,13 @@ public final class Coordinates {
         this.y = y;
     }
 
+    /**
+     * creates random coordinates in specified range
+     *
+     * @param length border of the x coordinate
+     * @param height border of the y coordinate
+     * @return random coordinates
+     */
     public static Coordinates random(final int length, final int height) {
         final Random random = new Random();
         return new Coordinates(random.nextInt(length), random.nextInt(height));

@@ -17,6 +17,12 @@ public final class Game {
 
     private Turn turn;
 
+    /**
+     * constructs the game with two players
+     *
+     * @param player1 to take part in game
+     * @param player2 to take part in game
+     */
     public Game(final Player player1, final Player player2) {
         this.player1 = player1;
         this.player2 = player2;
@@ -31,6 +37,9 @@ public final class Game {
         return field1.hasShips() && field2.hasShips();
     }
 
+    /**
+     * starts the game and plays while it has ships
+     */
     public final void play() {
         Player currentPlayer = player1;
         Field currentField;
@@ -86,6 +95,13 @@ public final class Game {
         System.out.println("The game is over! The winner is:" + currentPlayer.getName());
     }
 
+    /**
+     *
+     *
+     * @param coordinates of the ship
+     * @param field to be considered
+     * @return List of coordinates
+     */
     private List<Coordinates> getShipCellCoordinates(final Coordinates coordinates, final Field field) {
         final List<Coordinates> shipCells = new ArrayList<>();
         shipCells.add(coordinates);
@@ -121,12 +137,18 @@ public final class Game {
             if (field.getCell(currentCellCoordinates) == Cell.Ship)
                 return false;
 
-        markNeighboursAsShoted(shipCellCoordinates, field);
+        markNeighboursAsShoot(shipCellCoordinates, field);
 
         return true;
     }
 
-    private void markNeighboursAsShoted(final List<Coordinates> shipCellCoordinates, final Field field) {
+    /**
+     * Marks neighbours of the shoot cell
+     *
+     * @param shipCellCoordinates neighbours coordinates
+     * @param field to be considered
+     */
+    private void markNeighboursAsShoot(final List<Coordinates> shipCellCoordinates, final Field field) {
         for (final Coordinates coordinates : shipCellCoordinates)
             for (final Neighbour neighbour : Neighbour.values()) {
                 final Coordinates currentNeighbourCoordinates = Coordinates.getNeighbour(coordinates, neighbour);
@@ -135,7 +157,7 @@ public final class Game {
                     continue;
 
                 if (field.getCell(currentNeighbourCoordinates) == Cell.Water)
-                    field.setCell(currentNeighbourCoordinates, Cell.ShotedWater);
+                    field.setCell(currentNeighbourCoordinates, Cell.ShootWater);
             }
     }
 

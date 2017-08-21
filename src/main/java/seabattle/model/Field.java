@@ -43,7 +43,7 @@ public final class Field {
                     case Water:
                         builder.append("~ ");
                         break;
-                    case ShotedWater:
+                    case ShootWater:
                         builder.append(". ");
                         break;
                     case DamagedShip:
@@ -63,10 +63,10 @@ public final class Field {
     public final ShotResult shot(final Coordinates coordinates) {
         switch (getCell(coordinates)) {
             case Water:
-                setCell(coordinates, Cell.ShotedWater);
+                setCell(coordinates, Cell.ShootWater);
                 return ShotResult.Miss;
 
-            case ShotedWater:
+            case ShootWater:
                 return ShotResult.AlreadyShoted;
 
             case DamagedShip:
