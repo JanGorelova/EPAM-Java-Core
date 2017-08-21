@@ -11,7 +11,18 @@ public final class Casino {
         final DuckCompetition competition = new DuckCompetition(Constants.DUCKS_COUNT);
 
         System.out.println("Welcome to duck casino! There are " + Constants.DUCKS_COUNT + " ducks. Let's win some money!");
+        gameRun(reader, playerAccount, competition);
+        System.out.println("You loose, bye-bye");
+    }
 
+    /**
+     * play the game until the player is not bankrupt
+     *
+     * @param reader read console information
+     * @param playerAccount players cash
+     * @param competition ducks competition
+     */
+    private static void gameRun(final NumberReader reader, final Account playerAccount, final DuckCompetition competition) {
         while (playerAccount.getCash() != 0) {
             System.out.println("You have $" + playerAccount.getCash() + ". Please choose duck (1 - " + Constants.DUCKS_COUNT + ") " +
                     "and bet (1 - $" + playerAccount.getCash() + "). Type \"quit\" if you want to stop the game");
@@ -31,6 +42,5 @@ public final class Casino {
             }
         }
 
-        System.out.println("You loose, bye-bye");
     }
 }
