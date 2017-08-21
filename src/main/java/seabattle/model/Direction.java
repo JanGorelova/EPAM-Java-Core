@@ -11,6 +11,11 @@ public enum Direction implements Directional {
     private final int dx;
     private final int dy;
 
+    /**
+     * Creates direction
+     * @param dx horizontal direction
+     * @param dy vertical direction
+     */
     Direction(final int dx, final int dy) {
         this.dx = dx;
         this.dy = dy;
@@ -26,6 +31,9 @@ public enum Direction implements Directional {
         return dy;
     }
 
+    /**
+     * @return random direction
+     */
     public static Direction random() {
         final Random random = new Random();
 
