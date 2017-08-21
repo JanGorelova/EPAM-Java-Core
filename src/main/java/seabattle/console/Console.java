@@ -10,6 +10,11 @@ public final class Console implements AutoCloseable {
     private final InputStreamReader streamReader;
     private final BufferedReader reader;
 
+    /**
+     * creates new console object for console reading
+     * the coordinates and name of the player
+     *
+     */
     public Console() {
         this.streamReader = new InputStreamReader(System.in);
         this.reader       = new BufferedReader(streamReader);
