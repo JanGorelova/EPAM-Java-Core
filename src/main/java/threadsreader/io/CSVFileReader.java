@@ -11,11 +11,21 @@ public final class CSVFileReader implements Runnable {
     private final String filePath;
     private final Consumer<UserVisit> onUserVisit;
 
+    /**
+     * generates new FileReader implementing Runnable interface
+     *
+     * @param filePath file to be read
+     * @param onUserVisit object interface link
+     */
     public CSVFileReader(final String filePath, final Consumer<UserVisit> onUserVisit) {
         this.onUserVisit = onUserVisit;
         this.filePath    = filePath;
     }
 
+    /**
+     *reads information from file, creates new UserVisit Object and
+     * adds it statistic file
+     */
     @Override
     public final void run() {
         try (final FileReader fileReader = new FileReader(filePath);

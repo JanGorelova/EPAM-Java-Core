@@ -13,6 +13,7 @@ public final class CSVFileGenerator implements Runnable {
 
     /**
      * generates csv file with specified userAmount, domains and filePath
+     * implementing Runnable interface
      *
      * @param filePath file to be written
      * @param usersAmount amount of users to be in the file
@@ -42,7 +43,7 @@ public final class CSVFileGenerator implements Runnable {
      * generates new UserVisit object with random user number in range from 1 to usersAmount,
      * with random domain from the list of the domains and random time in range from 5 to 10 minutes
      *
-     * @return UserVisit object
+     * @return new UserVisit object with random characteristics
      */
     private UserVisit generateVisit() {
         return new UserVisit(getRandom(1, usersAmount), domains.get(getRandom(0, domains.size())), getRandom(5, 10));

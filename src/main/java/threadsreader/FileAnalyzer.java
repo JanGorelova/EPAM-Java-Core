@@ -31,8 +31,7 @@ public final class FileAnalyzer {
 
     private static synchronized void addVisit(final UserVisit userVisit) {
         if (statistics.containsKey(userVisit)) {
-            Integer currentTime = statistics.get(userVisit);
-            statistics.put(userVisit, currentTime + userVisit.time);
+            statistics.put(userVisit, statistics.get(userVisit) + userVisit.time);
         } else {
             statistics.put(userVisit, userVisit.time);
         }

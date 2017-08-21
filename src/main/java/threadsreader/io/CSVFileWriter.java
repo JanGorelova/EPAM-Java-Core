@@ -10,6 +10,12 @@ public final class CSVFileWriter implements Runnable {
     private final Map<UserVisit,Integer> concurrentHashMap;
     private final String filePath;
 
+    /**
+     * creates new
+     *
+     * @param filePath file to be written
+     * @param concurrentHashMap map consisting of
+     */
     public CSVFileWriter(final String filePath, final Map<UserVisit, Integer> concurrentHashMap) {
         this.concurrentHashMap = concurrentHashMap;
         this.filePath = filePath;
