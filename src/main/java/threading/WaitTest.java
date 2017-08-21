@@ -12,7 +12,7 @@ public final class WaitTest {
             public void run() {
                 for (int i = 0; i < 10; i++) {
                     System.err.println(i);
-                    if (i == 3) {
+                    if (i == 9) {
                         synchronized (key) {
                             key.notifyAll();
                         }

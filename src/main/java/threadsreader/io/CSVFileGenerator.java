@@ -11,12 +11,22 @@ public final class CSVFileGenerator implements Runnable {
     private final int usersAmount;
     private final List<String> domains;
 
+    /**
+     * generates csv file with specified userAmount, domains and filePath
+     *
+     * @param filePath file to be written
+     * @param usersAmount amount of users to be in the file
+     * @param domains list of domains to be used in the file
+     */
     public CSVFileGenerator(final String filePath, final int usersAmount, final List<String> domains) {
         this.filePath = filePath;
         this.usersAmount = usersAmount;
         this.domains = domains;
     }
 
+    /**
+     * writes to file 1000 times new UserVisit objects with random domains, times and users id
+     */
     @Override
     public final void run() {
         try(final FileWriter writer = new FileWriter(filePath)) {
@@ -28,6 +38,12 @@ public final class CSVFileGenerator implements Runnable {
         }
     }
 
+    /**
+     * generates new UserVisit object with random user number in range from 1 to usersAmount,
+     * with random domain from the list of the domains and random time in range from 5 to 10 minutes
+     *
+     * @return UserVisit object
+     */
     private UserVisit generateVisit() {
         return new UserVisit(getRandom(1, usersAmount), domains.get(getRandom(0, domains.size())), getRandom(5, 10));
     }
