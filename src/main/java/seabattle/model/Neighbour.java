@@ -13,6 +13,12 @@ public enum Neighbour implements Directional {
     private final int dx;
     private final int dy;
 
+    /**
+     * creates new neighbour of the cell
+     *
+     * @param dx x - bias
+     * @param dy y - bias
+     */
     Neighbour(final int dx, final int dy) {
         this.dx = dx;
         this.dy = dy;
