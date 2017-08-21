@@ -8,6 +8,11 @@ public final class Account {
         this.cash = cash;
     }
 
+    /**
+     * deposits the money to account
+     *
+     * @param amount money to be deposited
+     */
     public final void debit(final int amount) {
         if (amount <= 0)
             throw new RuntimeException("The amount must be positive!");
@@ -15,6 +20,11 @@ public final class Account {
         cash += amount;
     }
 
+    /**
+     * withdraws the money from account
+     *
+     * @param amount money to be withdrawn
+     */
     public final void withdraw(final int amount) {
         if (amount > cash)
             throw new RuntimeException("You have not enough money!");
