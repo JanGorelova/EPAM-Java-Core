@@ -10,6 +10,9 @@ public final class StupidComputer extends Player {
         super("Smart computer #" + (int) (Math.random() * 100));
     }
 
+    /**
+     * @return random coordinates from field
+     */
     @Override
     public final Coordinates getCoordinates() {
         return Coordinates.random(SeaBattle.FIELD_LENGTH, SeaBattle.FIELD_HEIGHT);
