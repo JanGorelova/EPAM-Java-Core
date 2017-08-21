@@ -11,10 +11,10 @@ public final class CSVFileWriter implements Runnable {
     private final String filePath;
 
     /**
-     * creates new
+     * creates new FileWriter
      *
      * @param filePath file to be written
-     * @param concurrentHashMap map consisting of
+     * @param concurrentHashMap map consisting of UserVisit key ant time
      */
     public CSVFileWriter(final String filePath, final Map<UserVisit, Integer> concurrentHashMap) {
         this.concurrentHashMap = concurrentHashMap;

@@ -24,7 +24,7 @@ public final class CSVFileReader implements Runnable {
 
     /**
      *reads information from file, creates new UserVisit Object and
-     * adds it statistic file
+     * adds it to statistic file
      */
     @Override
     public final void run() {
