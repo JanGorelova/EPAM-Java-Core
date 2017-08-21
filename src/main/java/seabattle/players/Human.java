@@ -8,6 +8,11 @@ import seabattle.model.Field;
 import java.io.IOException;
 
 public final class Human extends Player {
+    /**
+     * creates Human object with name read from console
+     *
+     * @throws IOException
+     */
     public Human() throws IOException {
         super(new Console().getName());
     }

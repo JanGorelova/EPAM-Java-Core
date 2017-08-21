@@ -79,10 +79,10 @@ public final class Field {
                 return ShotResult.Miss;
 
             case ShootWater:
-                return ShotResult.AlreadyShoted;
+                return ShotResult.AlreadyShoot;
 
             case DamagedShip:
-                return ShotResult.AlreadyShoted;
+                return ShotResult.AlreadyShoot;
 
             case Ship:
                 setCell(coordinates, Cell.DamagedShip);

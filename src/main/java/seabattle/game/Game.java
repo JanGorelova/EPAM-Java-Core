@@ -76,7 +76,7 @@ public final class Game {
 
             final ShotResult result = currentField.shot(currentCoordinates);
             switch (result) {
-                case AlreadyShoted:
+                case AlreadyShoot:
                     System.out.println("You have already shoot this cell!");
                     break;
                 case Miss:
