@@ -14,31 +14,28 @@ public final class FileAnalyzer {
     private static final HashMap<UserVisit, Integer> statistics = new HashMap<>();
     private static final List<String> filePaths = new ArrayList<>();
     private static final List<CSVFileGenerator> generators = new ArrayList<>();
+    private static final List<Thread> threads = new ArrayList<>();
 
     public static void main(final String[] args) throws InterruptedException {
-        final List<Thread> threads = new ArrayList<>();
-
         fillTheFilePaths();
 
         for (final String filepath : filePaths) {
-            generators.add(new CSVFileGenerator(filepath, 6,Arrays.asList("ya.ru", "vk.com", "google.com", "mail.ru", "ok.ru", "aliexpress.com")));
-
+            generators.add(new CSVFileGenerator(filepath, 6, Arrays.asList("ya.ru", "vk.com", "google.com", "mail.ru", "ok.ru", "aliexpress.com")));
         }
 
         for (final CSVFileGenerator currentGenerator : generators) {
             new Thread(currentGenerator).start();
         }
 
-
         for (String file : filePaths) {
             threads.add(new Thread(new CSVFileReader(file, FileAnalyzer::addVisit)));
         }
 
-        for (Thread thread: threads) {
+        for (Thread thread : threads) {
             thread.start();
         }
 
-        for (Thread thread: threads) {
+        for (Thread thread : threads) {
             thread.join();
         }
 
