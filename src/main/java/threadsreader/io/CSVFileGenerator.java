@@ -10,7 +10,6 @@ public final class CSVFileGenerator implements Runnable {
     private final String filePath;
     private final int usersAmount;
     private final List<String> domains;
-
     /**
      * generates csv file with specified userAmount, domains and filePath
      * implementing Runnable interface
@@ -31,7 +30,7 @@ public final class CSVFileGenerator implements Runnable {
     @Override
     public final void run() {
         try(final FileWriter writer = new FileWriter(filePath)) {
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 20; i++) {
                 writer.write(generateVisit() + "\n");
             }
         } catch (final IOException e) {
